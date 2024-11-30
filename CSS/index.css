@@ -401,17 +401,15 @@ Delhi real estate destination css  =============== */
   text-align: center;
 }
 
-
 .line_animation {
   position: relative;
 }
 
 .line_animation {
-  transition: all 5s cubic-bezier(.25, .8, .25, 1) 0s;
+  transition: all 5s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
   margin-top: 2rem;
   position: relative;
   cursor: pointer;
-
 }
 
 .line_animation::before {
@@ -433,7 +431,7 @@ Delhi real estate destination css  =============== */
   left: 0;
   width: 100%;
   height: 10px;
-  transition: width 7s cubic-bezier(.25, .8, .25, 1) 0s;
+  transition: width 7s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
   background-color: #cabe9f;
 }
 
@@ -444,14 +442,9 @@ Delhi real estate destination css  =============== */
   right: auto;
   width: 0%;
   height: 10px;
-  transition: width 7s cubic-bezier(.25, .8, .25, 1) 0s;
+  transition: width 7s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
   background-color: #cabe9f;
 }
-
-
-
-
-
 
 /* ============== Real state cards section css =============== */
 
@@ -737,20 +730,17 @@ Delhi real estate destination css  =============== */
   color: #fff;
 }
 
-
 .socia_media_links {
   margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-
 }
 
 .socia_media_links .fa-brands {
   color: white;
   font-size: 1.8rem;
 }
-
 
 /* =============== whatsApp icon css ======================== */
 
@@ -877,8 +867,6 @@ Delhi real estate destination css  =============== */
     flex-wrap: wrap;
     padding: 1.5rem 2rem;
   }
-
-
 
   .num h4 {
     font-size: 26px;
@@ -1039,5 +1027,54 @@ Delhi real estate destination css  =============== */
     font-size: 2.5rem;
     width: 400px;
     /* height: 140px; */
+  }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem auto ;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  animation: prixClipFix 2s linear infinite;
+}
+.loader::after {
+  inset: 8px;
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: #ff3d00;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  75%,
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
   }
 }
