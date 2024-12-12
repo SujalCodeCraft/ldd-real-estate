@@ -89,48 +89,49 @@ const AnimationOfNumbers = () => {
 
 // ================= Creating Sticky Navbar =========================>
 
-const hading = document.querySelector(".observation");
-const logo = document.querySelector(".logo");
-const observer = new IntersectionObserver(
-  (entries, observe) => {
-    const [entry] = entries;
-    console.log(entry);
-    if (entry.isIntersecting) {
-      document.body.classList.add("sticky");
-      console.log((logo.src = "img/logo2.png"));
-    } else {
-      document.body.classList.remove("sticky");
-      console.log((logo.src = "img/logo2.png"));
+  const hading = document.querySelector(".observation");
+  const logo = document.querySelector(".logo");
+  
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const [entry] = entries;
+      console.log(entry);
+      if (entry.isIntersecting) {
+        document.body.classList.add("sticky");
+        console.log((logo.src = "assets/img/logo2.png"));  // Update the path to match your directory
+      } else {
+        document.body.classList.remove("sticky");
+        console.log((logo.src = "assets/img/logo2.png"));  // Same path for consistency
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
     }
-  },
-  {
-    root: null,
-    threshold: 0,
-  }
-);
-
-observer.observe(hading);
-
-// ================= Smooth Scrolling Animation =========================>
-
-const workSection = document.querySelector(".numbers");
-console.log(workSection);
-
-const workObserver = new IntersectionObserver(
-  (entries, observer) => {
-    const [entry] = entries;
-
-    if (entry.isIntersecting) {
-      return AnimationOfNumbers();
+  );
+  
+  observer.observe(hading);
+  
+  // ================= Smooth Scrolling Animation =========================>
+  
+  const workSection = document.querySelector(".numbers");
+  console.log(workSection);
+  
+  const workObserver = new IntersectionObserver(
+    (entries) => {
+      const [entry] = entries;
+  
+      if (entry.isIntersecting) {
+        return AnimationOfNumbers();
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
     }
-  },
-  {
-    root: null,
-    threshold: 0,
-  }
-);
-
-workObserver.observe(workSection);
+  );
+  
+  workObserver.observe(workSection);
 
 
 
