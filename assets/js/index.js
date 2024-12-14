@@ -135,6 +135,36 @@ const AnimationOfNumbers = () => {
 
 
 
+  // my custome code start
+
+
+  const images = [
+    'https://via.placeholder.com/700x400',
+    'https://via.placeholder.com/700x400/ff7f7f',
+    'https://via.placeholder.com/700x400/77dd77',
+];
+let currentIndex = 0;
+
+const sliderImage = document.getElementById('slider-image');
+const leftBtn = document.querySelector('.left');
+const rightBtn = document.querySelector('.right');
+
+function updateImage(index) {
+    sliderImage.src = images[index];
+}
+
+leftBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+    updateImage(currentIndex);
+});
+
+rightBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+    updateImage(currentIndex);
+});
+  // my custome code end
+
+
 
 
 
