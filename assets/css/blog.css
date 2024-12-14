@@ -298,12 +298,6 @@
 
 
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  box-sizing: border-box;
-}
-
 section {
   display: flex;
   width: 100%;
@@ -312,7 +306,7 @@ section {
 
 .left {
   flex: 30%;
-  max-width: 30%;
+  /* max-width: 30%; */
   padding: 10px;
   /* background-color: #f4f4f4; */
   border-radius: 5px;
