@@ -283,10 +283,173 @@
   .post-title {
     font-size: 1.8rem;
   }
+
   .post-meta span {
     font-size: 0.8rem;
   }
+
   .post-content p {
     font-size: 1.1rem;
+  }
+}
+
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+}
+
+.left {
+  flex: 30%;
+  max-width: 30%;
+  padding: 10px;
+  /* background-color: #f4f4f4; */
+  border-radius: 5px;
+}
+
+.right {
+  flex: 30%;
+  max-width: 30%;
+  padding: 10px;
+  /* background-color: #f4f4f4; */
+  border-radius: 5px;
+}
+
+.left img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  section {
+    flex-wrap: wrap;
+  }
+
+  .left,
+  .right {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .right {
+    margin-top: 20px;
+  }
+}
+
+.heeading{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.para{
+  line-height: 1.6rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-rows: repeat(5, 1fr); /* 5 rows */
+  gap: 10px; /* Spacing between boxes */
+  padding: 20px;
+}
+
+.grid-item {
+  margin: 5px 3px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.grid-item h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.grid-item p {
+  margin: 10px 0 0;
+  font-size: 1em;
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+      grid-template-columns: 1fr; /* 1 column on very small screens */
   }
 }
