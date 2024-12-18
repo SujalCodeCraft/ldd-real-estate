@@ -579,16 +579,44 @@ Delhi real estate destination css  =============== */
 /* ================= our images cards listings css   ====================== */
 
 .Our_Listingss {
-  padding: 1rem 2rem;
+  padding: 1rem 2rem;    display: grid;
+  gap: 20px; /* Space between grid items */
+
 }
 
 .Our_Listings {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
-  justify-content: center;
-  align-items: center;
-  gap: 2rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(305px, 1fr)); /* This allows flexibility */
+  gap: 20px; /* Space between items */
   margin: 0.5rem 0 7rem 0;
+}
+
+.Our_Listings .listing-item {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.Our_Listings .listing-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.Our_Listings .listing-item h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.Our_Listings .listing-item p {
+  font-size: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .Our_Listings {
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on large screens */
+  }
 }
 
 .Our_Listingss h3 {
@@ -1439,4 +1467,21 @@ ul {
   .property-image, .property-details {
       flex: 1 1 100%;
   }
+}
+
+.highlight-tag {
+  background-color: #f0f0f0;
+  padding: 0.5rem;
+  margin: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.show-more-highlights {
+  max-height: 200px; /* Or whatever height is appropriate */
+  overflow-y: auto;
+}
+
+.show-more {
+  cursor: pointer;
+  color: blue;
 }
