@@ -489,10 +489,10 @@
               const firstParagraph = property.title || "No title available"; // Default title if not available
 
               propertyCard.innerHTML = `
-              <div class="image-container">
+              <div class="image-container" style="height:100%;">
                 <img src="${
                   property.media[0] || "default-image.jpg"
-                }" alt="Listing_img" width="600" height="390" />
+                }" alt="Listing_img" width="600" style="height:100%;"  />
                 <p class="centered-text">
                   ${property.title || "Untitled Property"} <br>
                   ${property.area || "Area not specified"}
