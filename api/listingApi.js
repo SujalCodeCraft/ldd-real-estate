@@ -41,6 +41,7 @@ export const addListing = async (itemData) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(itemData),
+      credentials: "include",
     });
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -59,6 +60,7 @@ export const updateListingById = async (id, itemData) => {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(itemData),
+      credentials: "include",
     });
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -76,6 +78,7 @@ export const deleteListingById = async (id) => {
     const response = await fetch(`${BASE_URL}/listing/${id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
+      credentials: "include",
     });
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
