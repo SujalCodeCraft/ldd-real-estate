@@ -38,14 +38,11 @@ export const signupUser = async (userData) => {
 };
 
 // Get User Details
-export const getCurrentUser = async (token) => {
+export const getCurrentUser = async () => {
   try {
     const response = await fetch(`${BASE_URL}/users/own`, {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
+      credentials: "include",
     });
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

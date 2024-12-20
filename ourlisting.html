@@ -25,7 +25,31 @@
       referrerpolicy="no-referrer"
     />
   </head>
-
+  <style>
+    /* Styling for the pagination */
+    .pagination-container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .pagination-button {
+      padding: 10px 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #9c9696;
+      transition: background-color 0.3s;
+    }
+    .pagination-button:hover {
+      background-color: #e0e0e0;
+    }
+    .pagination-button:disabled {
+      cursor: not-allowed;
+      background-color: #d0d0d0;
+    }
+  </style>
   <body>
     <nav class="navbar service">
       <div class="navbar-logo">
@@ -203,10 +227,9 @@
     <span id="loader" class="loader"></span>
 
     <div class="Our_Listingss properties">
-      <div class="Our_Listings" id="listing-container">
-        <!-- Dynamic listings will be appended here -->
-      </div>
+      <div class="Our_Listings" id="listing-container"></div>
     </div>
+    <div id="pagination-container" class="pagination-container"></div>
     <!-- cards sections -->
 
     <!-- Footer Section -->
@@ -279,18 +302,24 @@
 
     <script type="module">
       import { getAllListings } from "./api/listingApi.js"; // Assuming you have this API function
+      let page = 1;
+      const limit = 9;
 
-      const fetchListings = async () => {
+      const fetchListings = async (page = 1) => {
         const loader = document.getElementById("loader");
         const listingsContainer = document.getElementById("listing-container");
+        const paginationContainer = document.getElementById(
+          "pagination-container"
+        );
 
         // Show loader
         loader.style.display = "block";
 
         try {
-          const listings = await getAllListings(); // Fetch all listings
-          if (listings) {
-            listings.forEach((property) => {
+          const response = await getAllListings(page, limit); // Fetch all listings
+          listingsContainer.innerHTML = "";
+          if (response && response.data && response.data.length > 0) {
+            response.data.forEach((property) => {
               // Create property card
               const propertyCard = document.createElement("div");
               propertyCard.classList.add("listing-item", "zoom_in"); // Add the correct class
@@ -314,6 +343,10 @@
 
               listingsContainer.appendChild(propertyCard); // Append the property card
             });
+
+            // Handle pagination buttons using totalPages
+            const totalPages = response.totalPages; // Use totalPages from API response
+            renderPaginationButtons(totalPages, page);
           } else {
             listingsContainer.innerHTML = "<p>No properties available.</p>";
           }
@@ -325,8 +358,27 @@
           loader.style.display = "none";
         }
       };
+      const renderPaginationButtons = (totalPages, currentPage) => {
+        const paginationContainer = document.getElementById(
+          "pagination-container"
+        );
+        paginationContainer.innerHTML = ""; // Clear existing pagination buttons
 
-      fetchListings(); // Call the function to fetch listings on page load
+        for (let i = 1; i <= totalPages; i++) {
+          const button = document.createElement("button");
+          button.textContent = i;
+          button.classList.add("pagination-button");
+          button.disabled = i === currentPage; // Disable current page button
+
+          button.addEventListener("click", () => {
+            fetchBlogs(i); // Fetch blogs for the selected page
+          });
+
+          paginationContainer.appendChild(button);
+        }
+      };
+
+      fetchListings(page); // Call the function to fetch listings on page load
     </script>
   </body>
 </html>

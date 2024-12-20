@@ -110,7 +110,7 @@
         </li>
       </ul>
       <div class="navbar-right">
-        <a href="tel:9818737542">
+        <a id="phoneNumber" href="tel:9818737542">
           <button class="call-now">Call Now</button>
         </a>
       </div>
@@ -120,7 +120,12 @@
         <span></span>
       </div>
 
-      <a href="https://wa.me/9818737542" class="whatsapp-link" target="_blank">
+      <a
+        href="https://wa.me/9818737542"
+        id="whatsapp-link"
+        class="whatsapp-link"
+        target="_blank"
+      >
         <img
           class="fa-square-whatsapp"
           src="assets/img/whatsapp.png"
@@ -273,18 +278,39 @@
             <span id="agent-phone">+91 9891019190</span>
           </div>
         </div>
-        <form class="form">
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email ID" required />
-          <div style="display: flex; gap: 10px">
-            <select>
-              <option value="+91">+91</option>
-              <option value="+1">+1</option>
-              <option value="+44">+44</option>
-            </select>
-            <input type="text" placeholder="Phone Number" required />
+        <form id="contactForm">
+          <div class="one mt-3">
+            <h4 class="heeading">For More Details</h4>
+            <input
+              id="contactName"
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
           </div>
-          <button type="submit" class="contact-btn">Contact Now</button>
+
+          <input
+            id="contactEmail"
+            type="email"
+            name="email"
+            placeholder="Your Email"
+          />
+          <input
+            id="contactPhone"
+            type="tel"
+            name="phone"
+            placeholder="Your Phone Number"
+          />
+          <textarea
+            id="contactMessage"
+            name="message"
+            rows="4"
+            placeholder="Your Message"
+            required
+          ></textarea>
+
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>
@@ -361,9 +387,11 @@
     <script src="assets/js/index.js"></script>
     <script src="assets/js/service.js"></script>
     <script type="module" src="api/blogApi.js"></script>
+    <script type="module" src="api/contactApi.js"></script>
 
     <script type="module">
       import { getListingById } from "./api/listingApi.js"; // Assuming you have this API function
+      import { getAllContacts } from "./api/contactApi.js";
 
       const renderPropertyDetails = async () => {
         const loader = document.getElementById("loader"); // Assuming there's a loader element
@@ -392,6 +420,12 @@
 
           // Render property details
           document.getElementById("property-title").innerText = property.title;
+          document.getElementById(
+            "whatsapp-link"
+          ).href = `tel:${property.contactOptions.whatsapp}`;
+          document.getElementById(
+            "phoneNumber"
+          ).href = `https://wa.me/${property.contactOptions.phone}`;
           document.getElementById(
             "property-id"
           ).innerText = `Listing ID #${property.listingId}`;
