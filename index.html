@@ -470,8 +470,9 @@
 
     <script type="module">
       import { getAllListings } from "./api/listingApi.js"; // Assuming you have this API function
-
-      const fetchListings = async () => {
+      let page = 1;
+      const limit = 6;
+      const fetchListings = async (page = 1) => {
         const loader = document.getElementById("loader");
         const listingsContainer = document.getElementById("listing-container");
 
@@ -479,9 +480,10 @@
         loader.style.display = "block";
 
         try {
-          const listings = await getAllListings(); // Fetch all listings
-          if (listings) {
-            listings.forEach((property) => {
+          const response = await getAllListings(page, limit); // Fetch all listings
+          listingsContainer.innerHTML = "";
+          if (response && response.data && response.data.length > 0) {
+            response.data.forEach((property) => {
               // Create property card
               const propertyCard = document.createElement("div");
               propertyCard.classList.add("listing-item", "zoom_in"); // Add the correct class
@@ -517,7 +519,7 @@
         }
       };
 
-      fetchListings(); // Call the function to fetch listings on page load
+      fetchListings(page); // Call the function to fetch listings on page load
     </script>
   </body>
 </html>
