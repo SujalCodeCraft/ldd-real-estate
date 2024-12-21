@@ -126,19 +126,25 @@ export const deleteBlogById = async (id) => {
 };
 
 const page = 1;
-const limit = 5;
+const limit = 8;
 
 let currentPage = 1;
 let totalPages = 1;
 
-const fetchData = async (endpoint, containerId) => {
+const fetchData = async (endpoint, containerId, page = 1) => {
   const container = document.getElementById(containerId);
   container.innerHTML = ""; // Clear previous content
+  console.log(endpoint, containerId, page);
 
   try {
     if (endpoint === "blogs") {
       const blogs = await getAllBlogs(page, limit);
       populateBlogsTable(container, blogs); // Populate the blog table
+      updatePaginationControls(
+        "blog-pagination-container",
+        blogs.currentPage,
+        blogs.totalPages
+      );
     }
   } catch (error) {
     console.error(`Error fetching ${endpoint}:`, error);
@@ -165,9 +171,48 @@ const deleteBlog = (blogId) => {
   });
 };
 
+const updatePaginationControls = (containerId, currentPage, totalPages) => {
+  const paginationContainer = document.getElementById(containerId);
+  paginationContainer.innerHTML = ""; // Clear previous pagination controls
+
+  // Add "Previous" button
+  if (currentPage > 1) {
+    const prevButton = document.createElement("button");
+    prevButton.textContent = "<";
+    prevButton.classList.add("btn", "btn-secondary", "btn-sm", "me-2");
+    prevButton.addEventListener("click", () => {
+      fetchData("blogs", "blogs-container", currentPage - 1); // Load previous page
+    });
+    paginationContainer.appendChild(prevButton);
+  }
+  // Optionally: Display the current page info
+  const pageInfo = document.createElement("span");
+  pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+  pageInfo.classList.add("pagination-info", "ms-3");
+  paginationContainer.appendChild(pageInfo);
+  // Add "Next" button
+  if (currentPage < totalPages) {
+    const nextButton = document.createElement("button");
+    nextButton.textContent = ">";
+    nextButton.classList.add("btn", "btn-secondary", "btn-sm", "ms-2");
+    nextButton.addEventListener("click", () => {
+      fetchData("blogs", "blogs-container", currentPage + 1); // Load next page
+    });
+    paginationContainer.appendChild(nextButton);
+  }
+};
+
 // Function to populate blogs table
 export const populateBlogsTable = (container, blogs) => {
   const sliceText = 50;
+
+  const { currentPage: page, totalPages: totalCount } = blogs;
+
+  console.log(page, totalCount);
+  currentPage = page;
+  totalPages = totalCount;
+  updatePaginationControls("blog-pagination-container", page, totalCount);
+
   container.innerHTML = ""; // Clear previous content
 
   // Check if the response contains blogs data
@@ -175,11 +220,6 @@ export const populateBlogsTable = (container, blogs) => {
     container.innerHTML = "<tr><td colspan='4'>No blogs available</td></tr>";
     return;
   }
-
-  const { currentPage: page, totalDocs } = blogs;
-
-  currentPage = page;
-  totalPages = totalDocs;
 
   blogs.data.forEach((blog) => {
     const row = document.createElement("tr");
@@ -417,4 +457,6 @@ document.addEventListener("DOMContentLoaded", () => {
       contentItem.parentElement.removeChild(contentItem);
     });
   });
+
+  fetchData("blogs", "blogs-container", currentPage);
 });

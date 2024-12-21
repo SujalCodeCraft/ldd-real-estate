@@ -127,24 +127,63 @@ export const deleteListingById = async (id) => {
   }
 };
 
-const fetchData = async (endpoint, containerId) => {
+let editingListingId = null;
+const page = 1;
+const limit = 8;
+
+let currentPage = 1;
+let totalPages = 1;
+let imagesToRemove = []; // Stores filenames of media to remove
+let newImages = [];
+const fetchData = async (endpoint, containerId, page = 1) => {
   const container = document.getElementById(containerId);
   container.innerHTML = ""; // Clear previous content
 
   try {
     if (endpoint === "listing") {
-      const listings = await getAllListings();
-      populateListingsTable(container, listings); // Populate the listings table
+      const data = await getAllListings(page, limit);
+      populateListingsTable(container, data); // Populate the listings table
+      updatePaginationControls(
+        "listing-pagination-container",
+        data.currentPage,
+        data.totalPages
+      );
     }
   } catch (error) {
     console.error(`Error fetching ${endpoint}:`, error);
   }
 };
 
-let editingListingId = null;
+const updatePaginationControls = (containerId, currentPage, totalPages) => {
+  const paginationContainer = document.getElementById(containerId);
+  paginationContainer.innerHTML = ""; // Clear previous pagination controls
 
-let imagesToRemove = []; // Stores filenames of media to remove
-let newImages = [];
+  // Add "Previous" button
+  if (currentPage > 1) {
+    const prevButton = document.createElement("button");
+    prevButton.textContent = "<";
+    prevButton.classList.add("btn", "btn-secondary", "btn-sm", "me-2");
+    prevButton.addEventListener("click", () => {
+      fetchData("listing", "listings-container", currentPage - 1); // Load previous page
+    });
+    paginationContainer.appendChild(prevButton);
+  }
+  // Optionally: Display the current page info
+  const pageInfo = document.createElement("span");
+  pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+  pageInfo.classList.add("pagination-info", "ms-3");
+  paginationContainer.appendChild(pageInfo);
+  // Add "Next" button
+  if (currentPage < totalPages) {
+    const nextButton = document.createElement("button");
+    nextButton.textContent = ">";
+    nextButton.classList.add("btn", "btn-secondary", "btn-sm", "ms-2");
+    nextButton.addEventListener("click", () => {
+      fetchData("listing", "listings-container", currentPage + 1); // Load next page
+    });
+    paginationContainer.appendChild(nextButton);
+  }
+};
 
 const renderMedia = (mediaArray) => {
   const mediaPreview = document.getElementById("mediaPreview");
@@ -171,42 +210,6 @@ const renderMedia = (mediaArray) => {
   });
 };
 
-const handleNewImages = (event) => {
-  const files = Array.from(event.target.files);
-  newImages.push(...files); // Add to newImages array
-
-  const mediaPreview = document.getElementById("mediaPreview");
-
-  files.forEach((file, index) => {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const mediaItem = document.createElement("div");
-      mediaItem.classList.add("media-item", "me-3", "mb-3");
-      mediaItem.innerHTML = `
-        <img src="${
-          e.target.result
-        }" alt="Uploaded Preview" class="img-thumbnail" style="width: 100px; height: 100px; object-fit: cover;" />
-        <button type="button" class="btn btn-danger btn-sm mt-2 removeUploadedMedia" data-index="${
-          newImages.length - 1
-        }">
-          Remove
-        </button>
-      `;
-
-      mediaPreview.appendChild(mediaItem);
-
-      // Attach event listener for remove button
-      mediaItem
-        .querySelector(".removeUploadedMedia")
-        .addEventListener("click", () => {
-          newImages.splice(index, 1); // Remove from newImages array
-          mediaPreview.removeChild(mediaItem); // Remove from the DOM
-        });
-    };
-    reader.readAsDataURL(file);
-  });
-};
-
 // Edit Listing Functionality
 const editListing = (listingId) => {
   console.log("Edit listing Functionality");
@@ -224,7 +227,7 @@ const deleteListing = (listingId) => {
 
   getListingById(listingId).then(async (listing) => {
     await deleteListingById(listing._id);
-    fetchData("listing", "listings-container");
+    fetchData("listing", "listings-container",currentPage);
     const mediaPreview = document.getElementById("mediaPreview");
     mediaPreview.innerHTML = "";
 
@@ -236,6 +239,16 @@ const deleteListing = (listingId) => {
 export const populateListingsTable = (container, listings) => {
   const sliceText = 50;
 
+  const { currentPage: page, totalPages: totalCount } = listings;
+
+  console.log(page, totalCount);
+  currentPage = page;
+  totalPages = totalCount;
+  updatePaginationControls(
+    "listing-pagination-container",
+    page,
+    totalCount
+  );
   listings.data.forEach((listing) => {
     const row = document.createElement("tr");
     row.innerHTML = `
@@ -538,7 +551,7 @@ export const handleListingFormSubmission = async (event, listingId) => {
     document.getElementById("listingForm").reset();
 
     // Reload listings
-    fetchData("listing", "listings-container");
+    fetchData("listing", "listings-container",currentPage);
     const mediaPreview = document.getElementById("mediaPreview");
     mediaPreview.innerHTML = "";
 
@@ -627,4 +640,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     highlightPointContainer.appendChild(tagInput);
   });
+  fetchData("listing", "listings-container", currentPage);
 });

@@ -110,7 +110,7 @@
         </li>
       </ul>
       <div class="navbar-right">
-        <a id="phoneNumber" href="tel:9818737542">
+        <a href="tel:9818737542">
           <button class="call-now">Call Now</button>
         </a>
       </div>
@@ -120,12 +120,7 @@
         <span></span>
       </div>
 
-      <a
-        href="https://wa.me/9818737542"
-        id="whatsapp-link"
-        class="whatsapp-link"
-        target="_blank"
-      >
+      <a href="https://wa.me/9818737542" target="_blank">
         <img
           class="fa-square-whatsapp"
           src="assets/img/whatsapp.png"
@@ -230,15 +225,19 @@
         <h2 id="property-price"></h2>
         <ul id="property-attributes"></ul>
         <div class="contact-buttons">
-          <button class="whatsapp-btn" id="whatsapp-btn">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-              alt="WhatsApp Icon"
-              class="icon"
-            />
-            Whatsapp
+          <a id="whatsapp-link" style="color: white">
+            <button id="whatsapp-btn" class="whatsapp-btn">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                alt="WhatsApp Icon"
+                class="icon"
+              />
+              Whatsapp
+            </button>
+          </a>
+          <button class="call-btn" id="phoneNumber call-btn">
+            <a id="phoneNumber" style="color: white"> Request for Call</a>
           </button>
-          <button class="call-btn" id="call-btn">Request for Call</button>
         </div>
         <p class="report">
           <span>Found Something Wrong with this Listing? </span
@@ -421,10 +420,10 @@
           // Render property details
           document.getElementById("property-title").innerText = property.title;
           document.getElementById(
-            "whatsapp-link"
+            "phoneNumber"
           ).href = `tel:${property.contactOptions.whatsapp}`;
           document.getElementById(
-            "phoneNumber"
+            "whatsapp-link"
           ).href = `https://wa.me/${property.contactOptions.phone}`;
           document.getElementById(
             "property-id"
