@@ -14,22 +14,22 @@
         background-color: #f8f9fa;
       }
       /* Styling for the pagination */
-      #pagination-container {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
+      .pagination-container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
 
-#pagination-container button {
-  padding: 8px 15px;
-  cursor: pointer;
-}
+      .pagination-container button {
+        padding: 8px 15px;
+        cursor: pointer;
+      }
 
-#pagination-container .pagination-info {
-  align-self: center;
-  margin-left: 10px;
-}
+      .pagination-container .pagination-info {
+        align-self: center;
+        margin-left: 10px;
+      }
 
       .loader {
         width: 48px;
@@ -142,6 +142,72 @@
         overflow-x: auto;
       }
 
+      .preview-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .preview-item {
+        position: relative;
+        aspect-ratio: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #f5f5f5;
+      }
+
+      .preview-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .remove-button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: rgba(255, 0, 0, 0.8);
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition: background-color 0.2s;
+      }
+
+      .remove-button:hover {
+        background: rgba(255, 0, 0, 1);
+      }
+
+      .file-input {
+        margin: 20px;
+        padding: 10px;
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        width: calc(100% - 40px);
+      }
+
+      .submit-button {
+        margin: 20px;
+        padding: 10px 20px;
+        background: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .submit-button:hover {
+        background: #218838;
+      }
+
       /* Responsive adjustments */
       @media (max-width: 767px) {
         .section-header h4 {
@@ -196,6 +262,18 @@
             Listings
           </button>
         </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="banners-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#banners"
+            type="button"
+            role="tab"
+          >
+            Banners
+          </button>
+        </li>
       </ul>
 
       <!-- Tab Content -->
@@ -220,8 +298,11 @@
                 <!-- Dynamic rows will be added here -->
               </tbody>
             </table>
-            <div id="pagination-container" class="pagination-container"></div>
           </div>
+          <div
+            id="contact-pagination-container"
+            class="pagination-container"
+          ></div>
 
           <div id="loader" style="display: none">Loading...</div>
         </div>
@@ -248,8 +329,11 @@
                 </tbody>
               </table>
             </div>
-            <div id="pagination-container" class="pagination-container"></div>
           </div>
+          <div
+            id="blog-pagination-container"
+            class="pagination-container"
+          ></div>
 
           <!-- Section 2: Upload New Blog -->
           <div class="new-section">
@@ -342,8 +426,11 @@
                 </tbody>
               </table>
             </div>
-            <div id="pagination-container" class="pagination-container"></div>
           </div>
+          <div
+            id="listing-pagination-container"
+            class="pagination-container"
+          ></div>
 
           <!-- Section 2: Upload New Listing -->
           <div class="new-section">
@@ -652,6 +739,44 @@
             </form>
           </div>
         </div>
+        <div class="tab-pane fade" id="banners" role="tabpanel">
+          <h3 class="section-header">Banners</h3>
+          <div class="new-section">
+            <form id="uploadForm">
+              <div class="mb-3">
+                <label for="bannerMedia" class="form-label"
+                  >Upload Home Banners</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="bannerMedia"
+                  multiple
+                />
+                <div
+                  id="bannerMediaPreview"
+                  class="d-flex flex-wrap mt-3"
+                ></div>
+              </div>
+              <!-- <div class="mb-3">
+                <label for="aboutBannerMedia" class="form-label"
+                  >Upload About Banners</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="aboutBannerMedia"
+                  multiple
+                />
+                <div
+                  id="aboutBannerMediaPreview"
+                  class="d-flex flex-wrap mt-3"
+                ></div>
+              </div> -->
+              <button type="submit" class="submit-button">Upload Images</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -659,6 +784,8 @@
     <script type="module" src="api/blogApi.js"></script>
 
     <script type="module">
+      import { getAllBanners, populateBanners } from "./api/bannerApi.js";
+
       import { getAllBlogs, populateBlogsTable } from "./api/blogApi.js";
       import {
         getAllContacts,
@@ -670,10 +797,13 @@
       } from "./api/listingApi.js";
 
       const page = 1;
-      const limit = 1;
+      const limit = 8;
       const fetchData = async (endpoint, containerId) => {
-        const container = document.getElementById(containerId);
-        container.innerHTML = ""; // Clear previous content
+        let container;
+        if (containerId) {
+          container = document.getElementById(containerId);
+          container.innerHTML = ""; // Clear previous content
+        }
 
         try {
           if (endpoint === "blogs") {
@@ -685,29 +815,15 @@
           } else if (endpoint === "listing") {
             const listings = await getAllListings(page, limit);
             populateListingsTable(container, listings); // Populate the listings table
+          } else if (endpoint === "banners") {
+            const banners = await getAllBanners();
+            populateBanners(banners);
+            // new BannerManager();
+            // populateBanners(container, banners); // Populate the banners if element is found
           }
         } catch (error) {
+          console.log(error);
           console.error(`Error fetching ${endpoint}:, error`);
-        }
-      };
-
-      const renderPaginationButtons = (totalPages, currentPage) => {
-        const paginationContainer = document.getElementById(
-          "pagination-container"
-        );
-        paginationContainer.innerHTML = ""; // Clear existing pagination buttons
-
-        for (let i = 1; i <= totalPages; i++) {
-          const button = document.createElement("button");
-          button.textContent = i;
-          button.classList.add("pagination-button");
-          button.disabled = i === currentPage; // Disable current page button
-
-          button.addEventListener("click", () => {
-            fetchData(i); // Fetch blogs for the selected page
-          });
-
-          paginationContainer.appendChild(button);
         }
       };
 
@@ -722,6 +838,9 @@
 
       document.getElementById("listings-tab").addEventListener("click", () => {
         fetchData("listing", "listings-container");
+      });
+      document.getElementById("banners-tab").addEventListener("click", () => {
+        fetchData("banners");
       });
 
       // On page load

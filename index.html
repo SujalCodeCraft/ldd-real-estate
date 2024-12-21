@@ -209,10 +209,7 @@
             <div class="slide-content">
               <h2>CREATING RELATIONSHIP CAPITAL</h2>
               <button>ONE STOP SOLUTION</button>
-              <img
-                src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fFJFQUwlMjBTVEFURXxlbnwwfHwwfHx8MA%3D%3D"
-                alt="home_img"
-              />
+              <img id="image1" src="" alt="home_img" />
             </div>
           </div>
           <div class="swiper-slide">
@@ -223,15 +220,10 @@
                 RETAIL SPACES
               </h2>
               <button>GET IN TOUCH</button>
-              <img
-                src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D"
-                alt="home_img"
-              />
+              <img id="image2" src="" alt="home_img" />
             </div>
           </div>
         </div>
-        <!-- <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> -->
       </div>
     </main>
 
@@ -520,6 +512,41 @@
       };
 
       fetchListings(page); // Call the function to fetch listings on page load
+    </script>
+
+    <script type="module">
+      import { getAllBanners } from "./api/bannerApi.js"; // Import banner API
+
+      // Function to fetch banners and dynamically update Swiper images
+      const fetchBanners = async () => {
+        try {
+          const response = await getAllBanners(); // Fetch banners
+          const banners = response.data[0]?.media || []; // Get media array or empty array
+
+          // Check if banners are available
+          if (banners.length === 0) {
+            console.error("No banners available.");
+            return;
+          }
+
+          // Select all Swiper images
+          const swiperSlides = document.querySelectorAll(".swiper-slide img");
+
+          // Assign each image's src to a corresponding banner URL
+          swiperSlides.forEach((image, index) => {
+            if (banners[index]) {
+              image.src = banners[index];
+            } else {
+              console.warn(`No banner available for image index ${index}`);
+            }
+          });
+        } catch (error) {
+          console.error("Error fetching banners:", error);
+        }
+      };
+
+      // Initialize banner fetching
+      fetchBanners();
     </script>
   </body>
 </html>
