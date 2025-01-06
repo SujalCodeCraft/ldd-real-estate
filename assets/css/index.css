@@ -11,7 +11,7 @@
 /* ==================== Navbar css  ============================= */
 
 .sticky .navbar {
-  position: fixed;
+  position: sticky !important;
   top: 0;
   background-color: #3f4448;
   color: #ffff;

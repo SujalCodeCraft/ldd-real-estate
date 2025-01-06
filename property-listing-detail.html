@@ -204,185 +204,188 @@
     <!-- main code start  -->
 
     <!-- Property Section -->
-    <span id="loader" class="loader"></span>
-
-    <section class="property-container" id="property-container">
-      <div class="property-image">
-        <div class="slider">
-          <button class="slide-btn left" id="prevImage">&#9664;</button>
-          <img src="" alt="Property Image" id="slider-image" />
-          <button class="slide-btn right" id="nextImage">&#9654;</button>
+  <div class="observation">
+      <span id="loader" class="loader"></span>
+  
+      <section class="property-container" id="property-container">
+        <div class="property-image">
+          <div class="slider">
+            <button class="slide-btn left" id="prevImage">&#9664;</button>
+            <img src="" alt="Property Image" id="slider-image" />
+            <button class="slide-btn right" id="nextImage">&#9654;</button>
+          </div>
+          <div class="image-controls">
+            <button id="photoCount">0 Photos</button>
+            <!-- Default text will be updated dynamically -->
+            <button id="map-button" onclick="openMap()">Map</button>
+          </div>
         </div>
-        <div class="image-controls">
-          <button id="photoCount">0 Photos</button>
-          <!-- Default text will be updated dynamically -->
-          <button id="map-button" onclick="openMap()">Map</button>
-        </div>
-      </div>
-      <div class="property-details" id="property-details">
-        <h1 id="property-title"></h1>
-        <p id="property-id"></p>
-        <h2 id="property-price"></h2>
-        <ul id="property-attributes"></ul>
-        <div class="contact-buttons">
-          <a id="whatsapp-link" style="color: white">
-            <button id="whatsapp-btn" class="whatsapp-btn">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-                alt="WhatsApp Icon"
-                class="icon"
-              />
-              Whatsapp
+        <div class="property-details" id="property-details">
+          <h1 id="property-title"></h1>
+          <p id="property-id"></p>
+          <h2 id="property-price"></h2>
+          <ul id="property-attributes"></ul>
+          <div class="contact-buttons">
+            <a id="whatsapp-link" style="color: white">
+              <button id="whatsapp-btn" class="whatsapp-btn">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                  alt="WhatsApp Icon"
+                  class="icon"
+                />
+                Whatsapp
+              </button>
+            </a>
+            <button class="call-btn" id="phoneNumber call-btn">
+              <a id="phoneNumber" style="color: white"> Request for Call</a>
             </button>
-          </a>
-          <button class="call-btn" id="phoneNumber call-btn">
-            <a id="phoneNumber" style="color: white"> Request for Call</a>
-          </button>
-        </div>
-        <p class="report">
-          <span>Found Something Wrong with this Listing? </span
-          ><a href="#" id="report-link">Report Here</a>.
-        </p>
-      </div>
-    </section>
-
-    <script src="script.js"></script>
-
-    <!-- main code end -->
-
-    <div class="containera">
-      <!-- Key Highlights Section -->
-      <div class="highlights">
-        <h2>Key Highlights</h2>
-        <div class="highlight-tags" id="highlight-tags"></div>
-        <p id="property-description"></p>
-        <ul class="change" id="property-highlights"></ul>
-        <div class="show-more">Show More</div>
-
-        <h3 style="margin-top: 2rem">Property Information</h3>
-
-        <!-- grid start  -->
-        <div class="grid-container" id="property-info"></div>
-        <!-- grid end  -->
-      </div>
-
-      <!-- Contact Section -->
-      <div class="contact-card">
-        <h2>Contact our Real Estate Experts</h2>
-        <div class="agent-info">
-          <div class="avatar">K</div>
-          <div class="details">
-            <strong id="agent-name">Amit Rai</strong>
-            <span class="rating" id="agent-rating">5 ★</span><br />
-            <span id="agent-phone">+91 9891019190</span>
           </div>
-        </div>
-        <form id="contactForm">
-          <div class="one mt-3">
-            <h4 class="heeading">For More Details</h4>
-            <input
-              id="contactName"
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-            />
-          </div>
-
-          <input
-            id="contactEmail"
-            type="email"
-            name="email"
-            placeholder="Your Email"
-          />
-          <input
-            id="contactPhone"
-            type="tel"
-            name="phone"
-            placeholder="Your Phone Number"
-          />
-          <textarea
-            id="contactMessage"
-            name="message"
-            rows="4"
-            placeholder="Your Message"
-            required
-          ></textarea>
-
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- cards sections -->
-
-    <!-- cards sections -->
-
-    <!-- Footer Section -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <img src="assets/img/logo3.png" alt="logo" />
-          <p>
-            At LDD Real Estate, we specialize in finding the perfect home for
-            you and your family.
+          <p class="report">
+            <span>Found Something Wrong with this Listing? </span
+            ><a href="#" id="report-link">Report Here</a>.
           </p>
-          <div class="socia_media_links">
-            <a
-              href="https://www.facebook.com/people/LDD-Realty/61564032338625/"
-            >
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a
-              href=" https://www.instagram.com/lddrealty?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            >
-              <i class="fa-brands fa-instagram"></i>
-            </a>
+        </div>
+      </section>
+  
+  
+      <!-- main code end -->
+  
+      <div class="containera">
+        <!-- Key Highlights Section -->
+        <div class="highlights">
+          <h2>Key Highlights</h2>
+          <div class="highlight-tags" id="highlight-tags"></div>
+          <p id="property-description"></p>
+          <ul class="change" id="property-highlights"></ul>
+          <div class="show-more">Show More</div>
+  
+          <h3 style="margin-top: 2rem">Property Information</h3>
+  
+          <!-- grid start  -->
+          <div class="grid-container" id="property-info"></div>
+          <!-- grid end  -->
+        </div>
+  
+        <!-- Contact Section -->
+        <div class="contact-card">
+          <h2>Contact our Real Estate Experts</h2>
+          <div class="agent-info">
+            <div class="avatar">K</div>
+            <div class="details">
+              <strong id="agent-name">Amit Rai</strong>
+              <span class="rating" id="agent-rating">5 ★</span><br />
+              <span id="agent-phone">+91 9891019190</span>
+            </div>
+          </div>
+          <form id="contactForm">
+            <div class="one mt-3">
+              <h4 class="heeading">For More Details</h4>
+              <input
+                id="contactName"
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+  
+            <input
+              id="contactEmail"
+              type="email"
+              name="email"
+              placeholder="Your Email"
+            />
+            <input
+              id="contactPhone"
+              type="tel"
+              name="phone"
+              placeholder="Your Phone Number"
+            />
+            <textarea
+              id="contactMessage"
+              name="message"
+              rows="4"
+              placeholder="Your Message"
+              required
+            ></textarea>
+  
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+  
+      <!-- cards sections -->
+  
+      <!-- cards sections -->
+  
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-column">
+            <img src="assets/img/logo3.png" alt="logo" />
+            <p>
+              At LDD Real Estate, we specialize in finding the perfect home for
+              you and your family.
+            </p>
+            <div class="socia_media_links">
+              <a
+                href="https://www.facebook.com/people/LDD-Realty/61564032338625/"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                href=" https://www.instagram.com/lddrealty?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>PROPERTIES</h4>
+            <ul>
+              <li><a href="properties.html">Our Listings</a></li>
+              <li><a href="#">Residential Properties</a></li>
+              <li><a href="#">Retail Properties</a></li>
+              <li><a href="#">Commercial Properties</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>residential real estate</h4>
+            <ul>
+              <li><a href="#">Plots in Gurgaon</a></li>
+              <li><a href="#">Bungalows in Gurgaon</a></li>
+              <li><a href="#">Builder Floors in Gurgaon</a></li>
+              <li><a href="#">Apartments in Gurgaon</a></li>
+              <li><a href="#">All Residential Properties in Gurgaon</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Residential Localities</h4>
+            <ul>
+              <li><a href="#">DLF City Phase 1-5</a></li>
+              <li><a href="#">M.G.Road</a></li>
+              <li><a href="#">Golf Course Road</a></li>
+              <li><a href="#">Golf Course Extn Road</a></li>
+              <li><a href="#">Sohna Road</a></li>
+              <li><a href="#">Sushant Lok 1 & 2</a></li>
+              <li><a href="#">South City 1 & 2</a></li>
+            </ul>
           </div>
         </div>
-        <div class="footer-column">
-          <h4>PROPERTIES</h4>
-          <ul>
-            <li><a href="properties.html">Our Listings</a></li>
-            <li><a href="#">Residential Properties</a></li>
-            <li><a href="#">Retail Properties</a></li>
-            <li><a href="#">Commercial Properties</a></li>
-          </ul>
+  
+        <div class="footer-bottom">
+          <p>
+            &copy; All rights reserved by <strong>LDD</strong> Design and Develop
+            by Big Design Software Technology.
+          </p>
         </div>
-        <div class="footer-column">
-          <h4>residential real estate</h4>
-          <ul>
-            <li><a href="#">Plots in Gurgaon</a></li>
-            <li><a href="#">Bungalows in Gurgaon</a></li>
-            <li><a href="#">Builder Floors in Gurgaon</a></li>
-            <li><a href="#">Apartments in Gurgaon</a></li>
-            <li><a href="#">All Residential Properties in Gurgaon</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Residential Localities</h4>
-          <ul>
-            <li><a href="#">DLF City Phase 1-5</a></li>
-            <li><a href="#">M.G.Road</a></li>
-            <li><a href="#">Golf Course Road</a></li>
-            <li><a href="#">Golf Course Extn Road</a></li>
-            <li><a href="#">Sohna Road</a></li>
-            <li><a href="#">Sushant Lok 1 & 2</a></li>
-            <li><a href="#">South City 1 & 2</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>
-          &copy; All rights reserved by <strong>LDD</strong> Design and Develop
-          by Big Design Software Technology.
-        </p>
-      </div>
-    </footer>
+      </footer>
+  </div>
     <!-- Footer Section -->
 
     <!-- JavaScript for Scroll to Top -->
+    <script src="script.js"></script>
+
     <script src="assets/js/index.js"></script>
     <script src="assets/js/service.js"></script>
     <script type="module" src="api/blogApi.js"></script>
