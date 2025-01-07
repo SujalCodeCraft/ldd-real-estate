@@ -1,4 +1,4 @@
-import { BASE_URL } from "./baseApi.js";
+import { BASE_URL,myFunction } from "./baseApi.js";
 
 const loader = document.getElementById("loader");
 const tabs = document.getElementById("myTabContent");
@@ -551,6 +551,8 @@ export const handleListingFormSubmission = async (event, listingId) => {
     document.getElementById("listingForm").reset();
 
     // Reload listings
+    myFunction("Listing Submitted Successfully");
+
     fetchData("listing", "listings-container",currentPage);
     const mediaPreview = document.getElementById("mediaPreview");
     mediaPreview.innerHTML = "";

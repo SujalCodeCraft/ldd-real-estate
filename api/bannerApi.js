@@ -1,4 +1,4 @@
-import { BASE_URL } from "./baseApi.js";
+import { BASE_URL,myFunction } from "./baseApi.js";
 const loader = document.getElementById("loader");
 const tabs = document.getElementById("myTabContent");
 
@@ -160,8 +160,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       try {
         await updateBanner("676669795875626f8f2dd82f", formData);
+    myFunction("Banner Submitted Successfully");
+
       } catch (error) {
         console.error("Error handling form submission:", error);
       }
+
     });
 });

@@ -1,4 +1,4 @@
-import { BASE_URL } from "./baseApi.js";
+import { BASE_URL, myFunction } from "./baseApi.js";
 
 // Get all contacts
 export const getAllContacts = async (page, limit) => {
@@ -190,6 +190,8 @@ export const handleSubmitContactForm = async (event) => {
     document.getElementById("contactEmail").value = "";
     document.getElementById("contactPhone").value = "";
     document.getElementById("contactMessage").value = "";
+
+    myFunction();
 
     // Optionally, refresh the contacts table
     fetchData("contacts", "contacts-container", currentPage);

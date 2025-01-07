@@ -218,9 +218,63 @@
           width: 100%;
         }
       }
+
+      /* snackbar */
+
+#snackbar {
+  visibility: hidden;
+  min-width: 150px;
+  /* margin-left: -125px; */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 99999;
+  right: 6%;
+  top: 30px;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 768px) {
+    #snackbar { left:6%}
+}
+
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;} 
+  to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 30px; opacity: 1;} 
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 30px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+
+
     </style>
   </head>
   <body>
+    <div id="snackbar"></div>
+
     <div class="container mt-2">
       <h2 class="text-center">Admin Panel</h2>
 

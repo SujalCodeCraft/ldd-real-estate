@@ -1,4 +1,4 @@
-import { BASE_URL } from "./baseApi.js";
+import { BASE_URL,myFunction } from "./baseApi.js";
 
 const loader = document.getElementById("loader");
 const tabs = document.getElementById("myTabContent");
@@ -387,6 +387,9 @@ export const handleBlogFormSubmission = async (event, blogId) => {
       "display: none; max-width: 100%; height: auto";
 
     // Reload blogs
+
+    myFunction("Blog Submitted Successfully");
+
     fetchData("blogs", "blogs-container");
   } catch (error) {
     console.error("Error handling form submission:", error);

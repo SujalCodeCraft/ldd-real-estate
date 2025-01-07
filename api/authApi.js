@@ -1,4 +1,4 @@
-import { BASE_URL } from "./baseApi.js";
+import { BASE_URL,myFunction } from "./baseApi.js";
 
 // User Login
 export const loginUser = async (credentials) => {
