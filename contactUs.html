@@ -185,10 +185,16 @@
   
     <!-- Contact Form Section -->
     <section class="contact-form">
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <input type="tel" placeholder="Your Number" required />
+      <form id="contactForm">
+        <input type="text" 
+        id="contactName"
+        placeholder="Your Name" required />
+        <input type="email"
+        id="contactEmail"
+        placeholder="Your Email" required />
+        <input type="tel"
+        id="contactPhone"
+        placeholder="Your Number" required />
         <label for="car-select" class="select-label">Property Type</label>
         <div class="select-wrapper">
           <select id="car-select" class="select-input">
@@ -198,7 +204,9 @@
             <option value="Retail_Property">Retail Property</option>
           </select>
         </div>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <textarea
+        id="contactMessage"
+        placeholder="Your Message" rows="5" required></textarea>
         <button type="submit">Submit</button>
       </form>
     </section>
@@ -277,6 +285,12 @@
   <!-- Footer Section -->
 
 
+  <script type="module">
+    import { getBlogById } from "./api/blogApi.js"; // Assuming you have this API function
+    import { getAllContacts } from "./api/contactApi.js";
+
+
+</script>
   <script src="assets/js/index.js"></script>
 </body>
 

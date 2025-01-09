@@ -179,11 +179,17 @@ export const handleSubmitContactForm = async (event) => {
   const email = document.getElementById("contactEmail").value;
   const phone = document.getElementById("contactPhone").value;
   const message = document.getElementById("contactMessage").value;
+  const propertySelect = document.getElementById("car-select");
+  let propertyType = "";
+
+  if (propertySelect) {
+    propertyType = propertySelect.value;
+  }
 
   console.log(name, email, phone, message);
 
   try {
-    await createContact({ name, email, phone, message });
+    await createContact({ name, email, phone, message, propertyType });
 
     // Clear the form
     document.getElementById("contactName").value = "";
