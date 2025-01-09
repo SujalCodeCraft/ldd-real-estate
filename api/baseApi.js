@@ -1,5 +1,5 @@
-export const BASE_URL = "http://localhost:5000/api";
-// export const BASE_URL = "https://ldd-backend.vercel.app/api";
+// export const BASE_URL = "http://localhost:5000/api";
+export const BASE_URL = "https://ldd-backend.vercel.app/api";
 
 export function myFunction(
   message = "Thank you! Your contact form has been submitted successfully."
