@@ -1,474 +1,553 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Welcome to LDD, a premier real estate organization located in the heart of Manesar"
+    />
+    <meta name="author" content="Nitesh" />
+    <title>LDD - Real Estate</title>
+    <!-- index css file  -->
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Welcome to LDD, a premier real estate organization located in the heart of Manesar" />
-  <meta name="author" content="Nitesh" />
-  <title>LDD - Real Estate</title>
-  <link rel="shortcut icon" href="img/Screenshot_2024-08-27_170534-removebg-preview.png" type="image/x-icon" />
-  <link rel="stylesheet" href="CSS/index.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- Font Awesome CDN link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-xyz12345..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <!-- Font Awesome CDN link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-xyz12345..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
-  <!-- Navbar -->
+  <body>
+    <!-- Navbar -->
+    <div id="snackbar"></div>
 
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <a href="#">
-        <img class="logo" src="img/logo3.png" alt="image_logo" />
-      </a>
-    </div>
-    <ul class="navbar-links">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">ABOUT US
-          <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="aboutUs.html">LDD Real Estate</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">SERVICES<span class="arrow">
-            <i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="servicesPage1.html">Real Estate Consultant In Haryana
-            </a>
-          </li>
-          <li>
-            <a href="servicesPage2.html">Commercial Real Estate Consultant</a>
-          </li>
-          <li>
-            <a href="servicesPage3.html"> Retail Real Estate Services</a>
-          </li>
-          <li>
-            <a href="servicesPage4.html"> Real Estate Portfolio Management</a>
-          </li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">PROPERTIES
-          <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="propertiesPage1.html">Our Listings</a>
-          </li>
-          <li><a href="propertiesPage2.html">Commercial Properties</a></li>
-          <li><a href="propertiesPage3.html">Retail Properties</a></li>
-          <li><a href="propertiesPage4.html">All Properties</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">RESOURCES
-          <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="blog.html">Blog</a>
-          </li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="contactUs.html">CONTACT US</a>
-      </li>
-    </ul>
-    <div class="navbar-right">
-      <button class="call-now">Call Now</button>
-    </div>
-    <div class="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <a href="https://wa.me/9818737542" class="whatsapp-link" target="_blank">
-      <img class="fa-square-whatsapp" src="img/download-removebg-preview.png" alt="WhatsApp Logo" />
-    </a>
-  </nav>
-
-  <!-- Offcanvas Menu -->
-  <div class="offcanvas">
-    <i class="burger fa-solid fa-xmark"></i>
-    <ul>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">ABOUT US
-          <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="aboutUs.html">LDD Real Estate</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">SERVICES<span class="arrow">
-            <i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="servicesPage1.html">Real Estate Consultant In Haryana
-            </a>
-          </li>
-          <li>
-            <a href="servicesPage2.html">Commercial Real Estate Consultant</a>
-          </li>
-          <li>
-            <a href="servicesPage3.html"> Retail Real Estate Services</a>
-          </li>
-          <li>
-            <a href="servicesPage4.html"> Real Estate Portfolio Management</a>
-          </li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">PROPERTIES
-          <span class="arrow"><i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="propertiesPage1.html">Our Listings</a>
-          </li>
-          <li><a href="propertiesPage2.html">Commercial Properties</a></li>
-          <li><a href="propertiesPage3.html">Retail Properties</a></li>
-          <li><a href="propertiesPage4.html">All Properties</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">RESOURCES
-          <span class="arrow"><i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="blog.html">Blog</a>
-          </li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="contactUs.html">CONTACT US</a>
-      </li>
-      <li><button class="call-now-drop">Call Now</button></li>
-    </ul>
-  </div>
-
-  <!-- Slider main container -->
-  <main>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="slide-content">
-            <h2>CREATING RELATIONSHIP CAPITAL</h2>
-            <button>ONE STOP SOLUTION</button>
-            <img
-              src="https://images.unsplash.com/photo-1503174971373-b1f69850bded?&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fFJFQUwlMjBTVEFURXxlbnwwfHwwfHx8MA%3D%3D"
-              alt="home_img" />
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="slide-content">
-            <h2 style="color: #dbbc90">
-              CORPORATE <br />
-              & <br />
-              RETAIL SPACES
-            </h2>
-            <button>GET IN TOUCH</button>
-            <img
-              src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D"
-              alt="home_img" />
-          </div>
-        </div>
+    <nav  class="navbar">
+      <div class="navbar-logo">
+        <a href="#">
+          <img class="logo" src="assets/img/logo3.png" alt="image_logo" />
+        </a>
       </div>
-      <!-- <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> -->
-    </div>
-  </main>
-
-  <div class="observation">
-    <div class="realSate">
-      <h3>Real Estate Consultant in Gurugram</h3>
-      <div class="realSatebox">
-        <div class="about">
-          <h4>About LDD</h4>
-          <p>
-            Welcome to LDD, a premier real estate organization located in the
-            heart of Manesar, Haryana. At LDD, we are dedicated to providing
-            exceptional real estate services, helping our clients navigate the
-            dynamic property market with confidence and ease.
-          </p>
-          <p>
-            With a deep understanding of the local market and a commitment to
-            integrity and transparency, LDD has established itself as a
-            trusted name in the real estate industry.
-          </p>
-          <p>
-            Whether you're looking to buy, sell, or lease property in Manesar
-            or the surrounding areas, LDD is here to guide you every step of
-            the way. Discover the difference with LDD – where your real estate
-            dreams become a reality.
-          </p>
-          <p>
-            From luxury apartments to commercial spaces, LDD provides a
-            diverse range of real estate options designed to meet the evolving
-            demands of the market. Join us at LDD and let us help you find the
-            perfect property that fits your lifestyle and business needs.
-          </p>
-          <button>SCHEDULE A CONSULTANT</button>
-        </div>
-        <div class="about_img">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1679856789205-f1e76c7edc32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wzfHx8ZW58MHx8fHx8"
-            alt="" />
-        </div>
+      <ul class="navbar-links">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >ABOUT US
+            <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="aboutUs.html">LDD Real Estate</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >SERVICES<span class="arrow">
+              <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="Real-estate-in-harayana.html"
+                >Real Estate Consultant In Haryana
+              </a>
+            </li>
+            <li>
+              <a href="commercial-real-estate.html"
+                >Commercial Real Estate Consultant</a
+              >
+            </li>
+            <li>
+              <a href="Retail-Real-Estate-Services.html">
+                Retail Real Estate Services</a
+              >
+            </li>
+            <li>
+              <a href="Real-Estate-Portfolio-Mangement.html">
+                Real Estate Portfolio Management</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >PROPERTIES
+            <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="ourlisting.html">Our Listings</a>
+            </li>
+            <li><a href="comercial-property.html">Commercial Properties</a></li>
+            <li><a href="Retail-property.html">Retail Properties</a></li>
+            <li><a href="All-property.html">All Properties</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >RESOURCES
+            <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="blog.html">Blog</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="contactUs.html">CONTACT US</a>
+        </li>
+      </ul>
+      <div class="navbar-right">
+        <a href="tel:9818737542">
+          <a href="tel:9818737542">
+            <button class="call-now">Call Now</button>
+          </a>
+        </a>
       </div>
-    </div>
-
-    <div class="numbers">
-      <div class="num">
-        <div class="line_animation">
-          <h4 class="counter_number" data-number="30000">0</h4>
-          <p>years of real estate consulting</p>
-        </div>
-      </div>
-      <div class="num">
-        <div class="line_animation">
-          <h4 class="counter_number" data-number="12565">0</h4>
-          <p>square feet residential sold & leased</p>
-        </div>
-      </div>
-      <div class="num">
-        <div class="line_animation">
-          <h4 class="counter_number" data-number="455656">0</h4>
-          <p>square feet commercial sold & leased</p>
-        </div>
-      </div>
-      <div class="num">
-        <div class="line_animation">
-          <h4 class="counter_number" data-number="8556">0</h4>
-          <p>clients serviced</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="realSate destination">
-      <div class="realSatebox">
-        <div class="about_img">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1679856789488-548eb518b10e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3w4fHx8ZW58MHx8fHx8"
-            alt="" />
-        </div>
-        <div class="about">
-          <h4>Haryana real estate destination</h4>
-          <p>
-            With Many years of experience in the real estate industry, we are
-            proud to be recognized as leading consultants in Haryana, offering
-            client-centric services that cater to a wide range of real estate
-            needs. Our deep understanding of the local market, combined with a
-            strategic approach, allows us to assist clients in finding
-            properties that perfectly align with their goals and interests.
-          </p>
-          <p>
-            At the heart of our service is a commitment to understanding our
-            clients' unique needs. We analyze every aspect of their
-            requirements to offer tailored solutions that meet their specific
-            objectives.
-          </p>
-          <p>
-            We strive to provide a refreshing and reassuring experience for
-            all our clients, focusing on creating lasting impressions and
-            fostering long-term relationships.
-          </p>
-          <p>
-            Our personalized approach goes beyond the transactional, aiming to
-            build deep, meaningful connections with each client.
-          </p>
-          <button>EXPLORE DELHI REAL STATE</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="imagesBuild">
-      <div class="zoom_in">
-        <div class="image-container">
-          <img
-            src="https://images.unsplash.com/photo-1546551613-09c2f83e1ede?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D"
-            alt="" />
-          <p class="centered-text">CREATING RELATIONSHIP CAPITAL</p>
-        </div>
+      <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
-      <div class="zoom_in">
-        <div class="image-container">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1670360414483-64e6d9ba9038?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D"
-            alt="" />
-          <p class="centered-text">COMMERCIAL REAL ESTATE</p>
-        </div>
-      </div>
-      <div class="zoom_in">
-        <div class="image-container">
-          <img
-            src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="" />
-          <p class="centered-text">RETAIL REAL ESTATE</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="banar">
-      <div class="container">
+      <a href="https://wa.me/9818737542" class="whatsapp-link" target="_blank">
         <img
-          src="https://images.unsplash.com/photo-1481277542470-605612bd2d61?&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmFja2dvdW5kJTIwaW1hZ2UlMjByZWFsJTIwc3RhdGV8ZW58MHx8MHx8fDA%3D"
-          alt="Background Image" class="background-image" />
-        <div class="overlay">
-          <div class="content">
-            <h2>
-              lets build a <br />
-              <span>relationship</span>
-            </h2>
+          class="fa-square-whatsapp"
+          src="assets/img/whatsapp.png"
+          alt="WhatsApp Logo"
+        />
+      </a>
+    </nav>
 
-            <button class="SCHEDULE_BTN">SCHEDULE A CALL</button>
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas">
+      <i class="burger fa-solid fa-xmark"></i>
+      <ul>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >ABOUT US
+            <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="aboutUs.html">LDD Real Estate</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >SERVICES<span class="arrow">
+              <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="Real-estate-in-harayana.html"
+                >Real Estate Consultant In Haryana
+              </a>
+            </li>
+            <li>
+              <a href="commercial-real-estate.html"
+                >Commercial Real Estate Consultant</a
+              >
+            </li>
+            <li>
+              <a href="Retail-Real-Estate-Services.html">
+                Retail Real Estate Services</a
+              >
+            </li>
+            <li>
+              <a href="Real-Estate-Portfolio-Mangement.html">
+                Real Estate Portfolio Management</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >PROPERTIES
+            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="ourlisting.html">Our Listings</a>
+            </li>
+            <li><a href="comercial-property.html">Commercial Properties</a></li>
+            <li><a href="Retail-property.html">Retail Properties</a></li>
+            <li><a href="All-property.html">All Properties</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >RESOURCES
+            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="blog.html">Blog</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="contactUs.html">CONTACT US</a>
+        </li>
+        <li>
+          <a href="tel:+9818737542">
+            <button class="call-now-drop">Call Now</button>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Slider main container -->
+    <main>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slide-content">
+              <h2>CREATING RELATIONSHIP CAPITAL</h2>
+              <button>ONE STOP SOLUTION</button>
+              <img id="image1" src="" alt="home_img" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide-content">
+              <h2 style="color: #dbbc90">
+                CORPORATE <br />
+                & <br />
+                RETAIL SPACES
+              </h2>
+              <button>GET IN TOUCH</button>
+              <img id="image2" src="" alt="home_img" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
-    <div class="Our_Listingss">
-      <h3>
-        Our Listings <br />
-        <span>View Our Mandated Listings</span>
-      </h3>
-      <div class="Our_Listings">
-        <div class="zoom_in">
-          <div class="image-container">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1679582754971-5a2d8ae7e6fa?&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHJlYWwlMjBlc3RhdGUlMjBidWlsZGluZ3xlbnwwfHwwfHx8MA%3D%3D"
-              alt="Listing_img" />
-            <p class="centered-text">
-              1000 SY, DLF Plot, DLF City Phase I <span>Explore</span>
+    <div class="observation">
+      <div class="realSate">
+        <h3>Real Estate Consultant in Gurugram</h3>
+        <div class="realSatebox">
+          <div class="about">
+            <h4>About LDD</h4>
+            <p>
+              Welcome to LDD, a premier real estate organization located in the
+              heart of Manesar, Haryana. At LDD, we are dedicated to providing
+              exceptional real estate services, helping our clients navigate the
+              dynamic property market with confidence and ease.
             </p>
-          </div>
-        </div>
-        <div class="zoom_in">
-          <div class="image-container">
-            <img
-              src="https://images.unsplash.com/photo-1515263487990-61b07816b324?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fHJlYWwlMjBlc3RhdGUlMjBidWlsZGluZ3xlbnwwfHwwfHx8MA%3D%3D"
-              alt="Listing_img" />
-            <p class="centered-text">
-              500 SY, DLF Plot, DLF City Phase I
-              <span>Explore</span>
+            <p>
+              With a deep understanding of the local market and a commitment to
+              integrity and transparency, LDD has established itself as a
+              trusted name in the real estate industry.
             </p>
-          </div>
-        </div>
-        <div class="zoom_in">
-          <div class="image-container">
-            <img
-              src="https://plus.unsplash.com/premium_photo-1682716270464-9a91cbbcf3b7?&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cmVhbCUyMGVzdGF0ZSUyMGJ1aWxkaW5nfGVufDB8fDB8fHww"
-              alt="Listing_img" />
-            <p class="centered-text">
-              316 SY, DLF Plot, DLF City Phase 2
-              <span>Explore</span>
+            <p>
+              Whether you're looking to buy, sell, or lease property in Manesar
+              or the surrounding areas, LDD is here to guide you every step of
+              the way. Discover the difference with LDD – where your real estate
+              dreams become a reality.
             </p>
-          </div>
-        </div>
-        <div class="zoom_in">
-          <div class="image-container">
-            <img
-              src="https://images.unsplash.com/photo-1430417934865-589b63ad5c00?&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8"
-              alt="Listing_img" />
-            <p class="centered-text">
-              DLF Builder Floor, DLF City Phase 1
-              <span>Explore</span>
+            <p>
+              From luxury apartments to commercial spaces, LDD provides a
+              diverse range of real estate options designed to meet the evolving
+              demands of the market. Join us at LDD and let us help you find the
+              perfect property that fits your lifestyle and business needs.
             </p>
+            <button>SCHEDULE A CONSULTANT</button>
           </div>
-        </div>
-
-        <div class="zoom_in">
-          <img
-            src="https://images.unsplash.com/photo-1423768164017-3f27c066407f?&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8"
-            alt="Listing_img" />
-          <p class="centered-text">
-            DLF Builder Floor, DLF City Phase 2
-            <span>Explore</span>
-          </p>
-        </div>
-        <div class="zoom_in">
-          <img
-            src="https://images.unsplash.com/photo-1430417934865-589b63ad5c00?&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8"
-            alt="Listing_img" />
-          <p class="centered-text">
-            DLF The Belaire
-            <br />
-            <span>Explore</span>
-          </p>
+          <div class="about_img">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1679856789205-f1e76c7edc32?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wzfHx8ZW58MHx8fHx8"
+              alt=""
+            />
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- ----------------------------------- -->
+      <div class="numbers">
+        <div class="num">
+          <div class="line_animation">
+            <h4 class="counter_number" data-number="30000">0</h4>
+            <p>years of real estate consulting</p>
+          </div>
+        </div>
+        <div class="num">
+          <div class="line_animation">
+            <h4 class="counter_number" data-number="12565">0</h4>
+            <p>square feet residential sold & leased</p>
+          </div>
+        </div>
+        <div class="num">
+          <div class="line_animation">
+            <h4 class="counter_number" data-number="455656">0</h4>
+            <p>square feet commercial sold & leased</p>
+          </div>
+        </div>
+        <div class="num">
+          <div class="line_animation">
+            <h4 class="counter_number" data-number="8556">0</h4>
+            <p>clients serviced</p>
+          </div>
+        </div>
+      </div>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-column">
-          <img src="img/logo3.png" alt="logo" />
+      <div class="realSate destination">
+        <div class="realSatebox">
+          <div class="about_img">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1679856789488-548eb518b10e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3w4fHx8ZW58MHx8fHx8"
+              alt=""
+            />
+          </div>
+          <div class="about">
+            <h4>Haryana real estate destination</h4>
+            <p>
+              With Many years of experience in the real estate industry, we are
+              proud to be recognized as leading consultants in Haryana, offering
+              client-centric services that cater to a wide range of real estate
+              needs. Our deep understanding of the local market, combined with a
+              strategic approach, allows us to assist clients in finding
+              properties that perfectly align with their goals and interests.
+            </p>
+            <p>
+              At the heart of our service is a commitment to understanding our
+              clients' unique needs. We analyze every aspect of their
+              requirements to offer tailored solutions that meet their specific
+              objectives.
+            </p>
+            <p>
+              We strive to provide a refreshing and reassuring experience for
+              all our clients, focusing on creating lasting impressions and
+              fostering long-term relationships.
+            </p>
+            <p>
+              Our personalized approach goes beyond the transactional, aiming to
+              build deep, meaningful connections with each client.
+            </p>
+            <button>EXPLORE DELHI REAL STATE</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="imagesBuild">
+        <div class="zoom_in">
+          <div class="image-container">
+            <img
+              src="https://images.unsplash.com/photo-1546551613-09c2f83e1ede?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D"
+              alt=""
+            />
+            <p class="centered-text">CREATING RELATIONSHIP CAPITAL</p>
+          </div>
+        </div>
+
+        <div class="zoom_in">
+          <div class="image-container">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1670360414483-64e6d9ba9038?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D"
+              alt=""
+            />
+            <p class="centered-text">COMMERCIAL REAL ESTATE</p>
+          </div>
+        </div>
+        <div class="zoom_in">
+          <div class="image-container">
+            <img
+              src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+            <p class="centered-text">RETAIL REAL ESTATE</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="banar">
+        <div class="container">
+          <img
+            src="https://images.unsplash.com/photo-1481277542470-605612bd2d61?&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmFja2dvdW5kJTIwaW1hZ2UlMjByZWFsJTIwc3RhdGV8ZW58MHx8MHx8fDA%3D"
+            alt="Background Image"
+            class="background-image"
+          />
+          <div class="overlay">
+            <div class="content">
+              <h2>
+                lets build a <br />
+                <span>relationship</span>
+              </h2>
+
+              <button class="SCHEDULE_BTN">SCHEDULE A CALL</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <span id="loader" class="loader"></span>
+
+      <div class="Our_Listingss properties">
+        <div class="Our_Listings" id="listing-container">
+          <!-- Dynamic listings will be appended here -->
+        </div>
+      </div>
+
+      <!-- ----------------------------------- -->
+
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-column">
+            <img src="assets/img/logo3.png" alt="logo" />
+            <p>
+              At LDD Real Estate, we specialize in finding the perfect home for
+              you and your family.
+            </p>
+            <div class="socia_media_links">
+              <a
+                href="https://www.facebook.com/people/LDD-Realty/61564032338625/"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                href=" https://www.instagram.com/lddrealty?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>PROPERTIES</h4>
+            <ul>
+              <li><a href="properties.html">Our Listings</a></li>
+              <li><a href="#">Residential Properties</a></li>
+              <li><a href="#">Retail Properties</a></li>
+              <li><a href="#">Commercial Properties</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>residential real estate</h4>
+            <ul>
+              <li><a href="#">Plots in Gurgaon</a></li>
+              <li><a href="#">Bungalows in Gurgaon</a></li>
+              <li><a href="#">Builder Floors in Gurgaon</a></li>
+              <li><a href="#">Apartments in Gurgaon</a></li>
+              <li><a href="#">All Residential Properties in Gurgaon</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Residential Localities</h4>
+            <ul>
+              <li><a href="#">DLF City Phase 1-5</a></li>
+              <li><a href="#">M.G.Road</a></li>
+              <li><a href="#">Golf Course Road</a></li>
+              <li><a href="#">Golf Course Extn Road</a></li>
+              <li><a href="#">Sohna Road</a></li>
+              <li><a href="#">Sushant Lok 1 & 2</a></li>
+              <li><a href="#">South City 1 & 2</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
           <p>
-            At LDD Real Estate, we specialize in finding the perfect home for
-            you and your family.
+            &copy; All rights reserved by <strong>LDD</strong> Design and
+            Develop by Big Design Software Technology.
           </p>
-          <div class="socia_media_links">
-
-            <a href="https://www.facebook.com/people/LDD-Realty/61564032338625/">
-
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href=" https://www.instagram.com/lddrealty?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-          </div>
         </div>
-        <div class="footer-column">
-          <h4>PROPERTIES</h4>
-          <ul>
-            <li><a href="properties.html">Our Listings</a></li>
-            <li><a href="#">Residential Properties</a></li>
-            <li><a href="#">Retail Properties</a></li>
-            <li><a href="#">Commercial Properties</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>residential real estate</h4>
-          <ul>
-            <li><a href="#">Plots in Gurgaon</a></li>
-            <li><a href="#">Bungalows in Gurgaon</a></li>
-            <li><a href="#">Builder Floors in Gurgaon</a></li>
-            <li><a href="#">Apartments in Gurgaon</a></li>
-            <li><a href="#">All Residential Properties in Gurgaon</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Residential Localities</h4>
-          <ul>
-            <li><a href="#">DLF City Phase 1-5</a></li>
-            <li><a href="#">M.G.Road</a></li>
-            <li><a href="#">Golf Course Road</a></li>
-            <li><a href="#">Golf Course Extn Road</a></li>
-            <li><a href="#">Sohna Road</a></li>
-            <li><a href="#">Sushant Lok 1 & 2</a></li>
-            <li><a href="#">South City 1 & 2</a></li>
-          </ul>
-        </div>
-      </div>
+      </footer>
+      <!-- Footer Section -->
+    </div>
+    <script defer src="assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-      <div class="footer-bottom">
-        <p>
-          &copy; All rights reserved by <strong>LDD</strong> Design and
-          Develop by Big Design Software Technology.
-        </p>
-      </div>
-    </footer>
-    <!-- Footer Section -->
-  </div>
+    <script type="module">
+      import { getAllListings } from "./api/listingApi.js"; // Assuming you have this API function
+      let page = 1;
+      const limit = 6;
+      const fetchListings = async (page = 1) => {
+        const loader = document.getElementById("loader");
+        const listingsContainer = document.getElementById("listing-container");
 
-  <script defer src="App/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-</body>
+        // Show loader
+        loader.style.display = "block";
 
+        try {
+          const response = await getAllListings(page, limit); // Fetch all listings
+          listingsContainer.innerHTML = "";
+          if (response && response.data && response.data.length > 0) {
+            response.data.forEach((property) => {
+              // Create property card
+              const propertyCard = document.createElement("div");
+              propertyCard.classList.add("listing-item", "zoom_in"); // Add the correct class
+
+              const firstParagraph = property.title || "No title available"; // Default title if not available
+
+              propertyCard.innerHTML = `
+              <div class="image-container" style="height:100%;">
+                <img src="${
+                  property.media[0] || "default-image.jpg"
+                }" alt="Listing_img" width="600" style="height:100%;"  />
+                <p class="centered-text">
+                  ${property.title || "Untitled Property"} <br>
+                  ${property.area || "Area not specified"}
+                  <a href="property-listing-detail.html?id=${property._id}">
+                    <span>Explore</span>
+                  </a>
+                </p>
+              </div>
+            `;
+
+              listingsContainer.appendChild(propertyCard); // Append the property card
+            });
+          } else {
+            listingsContainer.innerHTML = "<p>No properties available.</p>";
+          }
+        } catch (error) {
+          console.error("Error fetching listings:", error);
+          listingsContainer.innerHTML = "<p>Failed to load properties.</p>";
+        } finally {
+          // Hide loader
+          loader.style.display = "none";
+        }
+      };
+
+      fetchListings(page); // Call the function to fetch listings on page load
+    </script>
+
+    <script type="module">
+      import { getAllBanners } from "./api/bannerApi.js"; // Import banner API
+
+      // Function to fetch banners and dynamically update Swiper images
+      const fetchBanners = async () => {
+        try {
+          const response = await getAllBanners(); // Fetch banners
+          const banners = response.data[0]?.media || []; // Get media array or empty array
+
+          // Check if banners are available
+          if (banners.length === 0) {
+            console.error("No banners available.");
+            return;
+          }
+
+          // Select all Swiper images
+          const swiperSlides = document.querySelectorAll(".swiper-slide img");
+
+          // Assign each image's src to a corresponding banner URL
+          swiperSlides.forEach((image, index) => {
+            if (banners[index]) {
+              image.src = banners[index];
+            } else {
+              console.warn(`No banner available for image index ${index}`);
+            }
+          });
+        } catch (error) {
+          console.error("Error fetching banners:", error);
+        }
+      };
+
+      // Initialize banner fetching
+      fetchBanners();
+    </script>
+  </body>
 </html>

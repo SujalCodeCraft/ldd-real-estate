@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us</title>
-  <link rel="stylesheet" href="CSS/contactUs.css" />
-  <link rel="stylesheet" href="CSS/index.css" />
+  <link rel="stylesheet" href="assets/css/contactUs.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
   <link rel="shortcut icon" href="img/Screenshot_2024-08-27_170534-removebg-preview.png" type="image/x-icon">
-  <link rel="stylesheet" href="CSS/index.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- Font Awesome CDN link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -16,11 +16,12 @@
 </head>
 
 <body>
+  <div id="snackbar"></div>
 
-  <nav class="navbar contactUs">
+  <nav style="position: sticky !important;" class="navbar contactUs">
     <div class="navbar-logo">
       <a href="index.html">
-        <img class="logo" src="img/logo1.jpeg" alt="image_logo" />
+        <img class="logo" src="assets/img/logo1.jpeg" alt="image_logo" />
       </a>
     </div>
     <ul class="navbar-links">
@@ -36,17 +37,17 @@
               class="fa-solid fa-angle-down"></i></span></a>
         <ul class="dropdown-menu">
           <li>
-            <a href="servicesPage1.html">Real Estate Consultant In Haryana
+             <a href="Real-estate-in-harayana.html">Real Estate Consultant In Haryana
             </a>
           </li>
           <li>
-            <a href="servicesPage2.html">Commercial Real Estate Consultant</a>
+            <a href="commercial-real-estate.html">Commercial Real Estate Consultant</a>
           </li>
           <li>
-            <a href="servicesPage3.html"> Retail Real Estate Services</a>
+           <a href="Retail-Real-Estate-Services.html"> Retail Real Estate Services</a>
           </li>
           <li>
-            <a href="servicesPage4.html"> Real Estate Portfolio Management</a>
+             <a href="Real-Estate-Portfolio-Mangement.html"> Real Estate Portfolio Management</a>
           </li>
         </ul>
       </li>
@@ -55,11 +56,11 @@
               class="fa-solid fa-angle-down"></i></span></a>
         <ul class="dropdown-menu">
           <li>
-            <a href="propertiesPage1.html">Our Listings</a>
+            <a href="ourlisting.html">Our Listings</a>
           </li>
-          <li><a href="propertiesPage2.html">Commercial Properties</a></li>
-          <li><a href="propertiesPage3.html">Retail Properties</a></li>
-          <li><a href="propertiesPage4.html">All Properties</a></li>
+          <li><a href="comercial-property.html">Commercial Properties</a></li>
+           <li><a href="Retail-property.html">Retail Properties</a></li>
+           <li><a href="All-property.html">All Properties</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -76,7 +77,9 @@
       </li>
     </ul>
     <div class="navbar-right">
-      <button class="call-now">Call Now</button>
+        <a href="tel:9818737542">
+        <button class="call-now">Call Now</button>
+      </a>
     </div>
     <div class="burger">
       <span></span>
@@ -84,7 +87,9 @@
       <span></span>
     </div>
 
-    <img class="fa-square-whatsapp" src="img/download-removebg-preview.png" alt="" />
+     <a href="https://wa.me/9818737542" class="whatsapp-link" target="_blank">
+      <img class="fa-square-whatsapp" src="assets/img/whatsapp.png" alt="WhatsApp Logo" />
+    </a>
   </nav>
 
   <!-- Offcanvas Menu -->
@@ -103,17 +108,17 @@
               class="fa-solid fa-angle-down"></i></span></a>
         <ul class="dropdown-menu">
           <li>
-            <a href="servicesPage1.html">Real Estate Consultant In Haryana
+             <a href="Real-estate-in-harayana.html">Real Estate Consultant In Haryana
             </a>
           </li>
           <li>
-            <a href="servicesPage2.html">Commercial Real Estate Consultant</a>
+            <a href="commercial-real-estate.html">Commercial Real Estate Consultant</a>
           </li>
           <li>
-            <a href="servicesPage3.html"> Retail Real Estate Services</a>
+           <a href="Retail-Real-Estate-Services.html"> Retail Real Estate Services</a>
           </li>
           <li>
-            <a href="servicesPage4.html"> Real Estate Portfolio Management</a>
+             <a href="Real-Estate-Portfolio-Mangement.html"> Real Estate Portfolio Management</a>
           </li>
         </ul>
       </li>
@@ -122,11 +127,11 @@
               class="fa-solid fa-angle-down"></i></span></a>
         <ul class="dropdown-menu">
           <li>
-            <a href="propertiesPage1.html">Our Listings</a>
+            <a href="ourlisting.html">Our Listings</a>
           </li>
-          <li><a href="propertiesPage2.html">Commercial Properties</a></li>
-          <li><a href="propertiesPage3.html">Retail Properties</a></li>
-          <li><a href="propertiesPage4.html">All Properties</a></li>
+          <li><a href="comercial-property.html">Commercial Properties</a></li>
+           <li><a href="Retail-property.html">Retail Properties</a></li>
+           <li><a href="All-property.html">All Properties</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -146,131 +151,147 @@
   </div>
 
 
-  <!-- Banner Section -->
-  <section class="banner">
-    <h1>Contact Us</h1>
-  </section>
-
-  <!-- Contact Information Section -->
-  <section class="contact-info">
-    <div class="info-box">
-      <i class="fa-solid fa-phone"></i>
-      <h3>Phone</h3>
-      <p>
-        <a href="tel:9818737542">+91-9818737542</a>
-      </p>
-    </div>
-    <div class="info-box">
-      <i class="fa-solid fa-envelope"></i>
-      <h3>Email</h3>
-      <p>
-        <a href="mailto:keshav@lddrealty.com">keshav@lddrealty.com</a>
-      </p>
-    </div>
-    <div class="info-box">
-      <i class="fa-solid fa-location-dot"></i>
-      <h3>Location</h3>
-      <p>
-        <a href="https://maps.app.goo.gl/Tw7Mjt4WvucB6PHL8" target="_blank">Plot no.146, Sector 5 Manesar 122051
-          Haryana</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- Contact Form Section -->
-  <section class="contact-form">
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <input type="tel" placeholder="Your Number" required />
-      <label for="car-select" class="select-label">Property Type</label>
-      <div class="select-wrapper">
-        <select id="car-select" class="select-input">
-          <option value="">-- Please Choose an Option --</option>
-          <option value="Residential_Properties">Residential Properties</option>
-          <option value="Commercial_Property">Commercial Property</option>
-          <option value="Retail_Property">Retail Property</option>
-        </select>
+ <div class="observation">
+    <!-- Banner Section -->
+    <section class="banner">
+      <h1>Contact Us</h1>
+    </section>
+  
+    <!-- Contact Information Section -->
+    <section class="contact-info">
+      <div class="info-box">
+        <i class="fa-solid fa-phone"></i>
+        <h3>Phone</h3>
+        <p>
+          <a href="tel:9818737542">+91-9818737542</a>
+        </p>
       </div>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-
-  <!-- Google Map Section -->
-  <section class="map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.6891252292357!2d76.9200285745465!3d28.368246896034925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3dd48adc2313%3A0x60f5979ff9fb234c!2sHGS%20INDIA%20LTD.!5e0!3m2!1sen!2sin!4v1725256896457!5m2!1sen!2sin"
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
-
-
-  <!-- Footer Section -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-column">
-          <img src="img/logo3.png" alt="logo" />
-          <p>
-            At LDD Real Estate, we specialize in finding the perfect home for
-            you and your family.
-          </p>
-          <div class="socia_media_links">
-
-            <a href="https://www.facebook.com/people/LDD-Realty/61564032338625/">
-
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href=" https://www.instagram.com/lddrealty?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-          </div>
+      <div class="info-box">
+        <i class="fa-solid fa-envelope"></i>
+        <h3>Email</h3>
+        <p>
+          <a href="mailto:keshav@lddrealty.com">keshav@lddrealty.com</a>
+        </p>
+      </div>
+      <div class="info-box">
+        <i class="fa-solid fa-location-dot"></i>
+        <h3>Location</h3>
+        <p>
+          <a href="https://maps.app.goo.gl/Tw7Mjt4WvucB6PHL8" target="_blank">Plot no.146, Sector 5 Manesar 122051
+            Haryana</a>
+        </p>
+      </div>
+    </section>
+  
+    <!-- Contact Form Section -->
+    <section class="contact-form">
+      <form id="contactForm">
+        <input type="text" 
+        id="contactName"
+        placeholder="Your Name" required />
+        <input type="email"
+        id="contactEmail"
+        placeholder="Your Email" required />
+        <input type="tel"
+        id="contactPhone"
+        placeholder="Your Number" required />
+        <label for="car-select" class="select-label">Property Type</label>
+        <div class="select-wrapper">
+          <select id="car-select" class="select-input">
+            <option value="">-- Please Choose an Option --</option>
+            <option value="Residential_Properties">Residential Properties</option>
+            <option value="Commercial_Property">Commercial Property</option>
+            <option value="Retail_Property">Retail Property</option>
+          </select>
         </div>
-      <div class="footer-column">
-        <h4>PROPERTIES</h4>
-        <ul>
-          <li><a href="#">Our Listings</a></li>
-          <li><a href="#">Residential Properties</a></li>
-          <li><a href="#">Retail Properties</a></li>
-          <li><a href="#">Commercial Properties</a></li>
-        </ul>
+        <textarea
+        id="contactMessage"
+        placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  
+    <!-- Google Map Section -->
+    <section class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.6891252292357!2d76.9200285745465!3d28.368246896034925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3dd48adc2313%3A0x60f5979ff9fb234c!2sHGS%20INDIA%20LTD.!5e0!3m2!1sen!2sin!4v1725256896457!5m2!1sen!2sin"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  
+  
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+            <img src="assets/img/logo3.png" alt="logo" />
+            <p>
+              At LDD Real Estate, we specialize in finding the perfect home for
+              you and your family.
+            </p>
+            <div class="socia_media_links">
+  
+              <a href="https://www.facebook.com/people/LDD-Realty/61564032338625/">
+  
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href=" https://www.instagram.com/lddrealty?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        <div class="footer-column">
+          <h4>PROPERTIES</h4>
+          <ul>
+            <li><a href="#">Our Listings</a></li>
+            <li><a href="#">Residential Properties</a></li>
+            <li><a href="#">Retail Properties</a></li>
+            <li><a href="#">Commercial Properties</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>residential real estate</h4>
+          <ul>
+            <li><a href="#">Plots in Gurgaon</a></li>
+            <li><a href="#">Bungalows in Gurgaon</a></li>
+            <li><a href="#">Builder Floors in Gurgaon</a></li>
+            <li><a href="#">Apartments in Gurgaon</a></li>
+            <li><a href="#">All Residential Properties in Gurgaon</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Residential
+            Localities</h4>
+          <ul>
+            <li><a href="#">DLF City Phase 1-5</a></li>
+            <li><a href="#">M.G.Road</a></li>
+            <li><a href="#">Golf Course Road</a></li>
+            <li><a href="#">Golf Course Extn Road</a></li>
+            <li><a href="#">Sohna Road</a></li>
+            <li><a href="#">Sushant Lok 1 & 2</a></li>
+            <li><a href="#">South City 1 & 2</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-column">
-        <h4>residential real estate</h4>
-        <ul>
-          <li><a href="#">Plots in Gurgaon</a></li>
-          <li><a href="#">Bungalows in Gurgaon</a></li>
-          <li><a href="#">Builder Floors in Gurgaon</a></li>
-          <li><a href="#">Apartments in Gurgaon</a></li>
-          <li><a href="#">All Residential Properties in Gurgaon</a></li>
-        </ul>
+  
+      <div class="footer-bottom">
+        <p>
+          &copy; All rights reserved by <strong>LDD</strong> Design and Develop by Big Design Software
+          Technology.
+        </p>
+  
       </div>
-      <div class="footer-column">
-        <h4>Residential
-          Localities</h4>
-        <ul>
-          <li><a href="#">DLF City Phase 1-5</a></li>
-          <li><a href="#">M.G.Road</a></li>
-          <li><a href="#">Golf Course Road</a></li>
-          <li><a href="#">Golf Course Extn Road</a></li>
-          <li><a href="#">Sohna Road</a></li>
-          <li><a href="#">Sushant Lok 1 & 2</a></li>
-          <li><a href="#">South City 1 & 2</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>
-        &copy; All rights reserved by <strong>LDD</strong> Design and Develop by Big Design Software
-        Technology.
-      </p>
-
-    </div>
-  </footer>
+    </footer>
+ </div>
   <!-- Footer Section -->
 
 
-  <script src="App/index.js"></script>
+  <script type="module">
+    import { getBlogById } from "./api/blogApi.js"; // Assuming you have this API function
+    import { getAllContacts } from "./api/contactApi.js";
+
+
+</script>
+  <script src="assets/js/index.js"></script>
 </body>
 
 </html>

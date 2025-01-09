@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.properties .Our_Listingss {
+    padding: 1rem 2rem;
+}
+
+.service .call-now {
+    border: 2px solid !important;
+    color: black !important;
+}
+
+.properties .Our_Listings {
+    gap: 1rem 1rem !important;
+    margin: 2rem 0 2rem 0 !important;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+}
+
+.properties .Our_Listings img {
+    border-radius: 0.3rem;
+
+}
+
+.properties .centered-text {
+    font-size: 1rem;
+
+}

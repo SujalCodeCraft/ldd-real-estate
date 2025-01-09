@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Listing</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/blog.css" />
+    <link rel="stylesheet" href="assets/css/properties.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/servicesPage.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-xyz12345..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div id="snackbar"></div>
+
+    <nav style="position: sticky !important;" class="navbar service">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <img class="logo" src="assets/img/logo1.jpeg" alt="image_logo" />
+        </a>
+      </div>
+      <ul class="navbar-links">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >ABOUT US
+            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="aboutUs.html">LDD Real Estate</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >SERVICES<span class="arrow">
+              <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="servicesPage1.html"
+                >Real Estate Consultant In Haryana
+              </a>
+            </li>
+            <li>
+              <a href="commercial-real-estate.html"
+                >Commercial Real Estate Consultant</a
+              >
+            </li>
+            <li>
+              <a href="Retail-Real-Estate-Services.html">
+                Retail Real Estate Services</a
+              >
+            </li>
+            <li>
+              <a href="Real-Estate-Portfolio-Mangement.html">
+                Real Estate Portfolio Management</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >PROPERTIES
+            <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="ourlisting.html">Our Listings</a>
+            </li>
+            <li><a href="comercial-property.html">Commercial Properties</a></li>
+            <li><a href="Retail-property.html">Retail Properties</a></li>
+            <li><a href="All-property.html">All Properties</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >RESOURCES
+            <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">Blog</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="contactUs" href="contactUs.html">CONTACT US</a>
+        </li>
+      </ul>
+      <div class="navbar-right">
+        <a href="tel:9818737542">
+          <button class="call-now">Call Now</button>
+        </a>
+      </div>
+      <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <a href="https://wa.me/9818737542" target="_blank">
+        <img
+          class="fa-square-whatsapp"
+          src="assets/img/whatsapp.png"
+          alt="WhatsApp Logo"
+        />
+      </a>
+    </nav>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas">
+      <i class="burger fa-solid fa-xmark"></i>
+      <ul>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >ABOUT US
+            <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="aboutUs.html">LDD Real Estate</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >SERVICES<span class="arrow">
+              <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="servicesPage1.html"
+                >Real Estate Consultant In Haryana
+              </a>
+            </li>
+            <li>
+              <a href="commercial-real-estate.html"
+                >Commercial Real Estate Consultant</a
+              >
+            </li>
+            <li>
+              <a href="Retail-Real-Estate-Services.html">
+                Retail Real Estate Services</a
+              >
+            </li>
+            <li>
+              <a href="Real-Estate-Portfolio-Mangement.html">
+                Real Estate Portfolio Management</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >PROPERTIES
+            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="ourlisting.html">Our Listings</a>
+            </li>
+            <li><a href="comercial-property.html">Commercial Properties</a></li>
+            <li><a href="Retail-property.html">Retail Properties</a></li>
+            <li><a href="All-property.html">All Properties</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >RESOURCES
+            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">Blogs</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="contactUs.html">CONTACT US</a>
+        </li>
+        <li><button class="call-now-drop">Call Now</button></li>
+      </ul>
+    </div>
+    <!-- main code start  -->
+
+    <!-- Property Section -->
+  <div class="observation">
+      <span id="loader" class="loader"></span>
+  
+      <section class="property-container" id="property-container">
+        <div class="property-image">
+          <div class="slider">
+            <button class="slide-btn left" id="prevImage">&#9664;</button>
+            <img src="" alt="Property Image" id="slider-image" />
+            <button class="slide-btn right" id="nextImage">&#9654;</button>
+          </div>
+          <div class="image-controls">
+            <button id="photoCount">0 Photos</button>
+            <!-- Default text will be updated dynamically -->
+            <button id="map-button" onclick="openMap()">Map</button>
+          </div>
+        </div>
+        <div class="property-details" id="property-details">
+          <h1 id="property-title"></h1>
+          <p id="property-id"></p>
+          <h2 id="property-price"></h2>
+          <ul id="property-attributes"></ul>
+          <div class="contact-buttons">
+            <a id="whatsapp-link" style="color: white">
+              <button id="whatsapp-btn" class="whatsapp-btn">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                  alt="WhatsApp Icon"
+                  class="icon"
+                />
+                Whatsapp
+              </button>
+            </a>
+            <button class="call-btn" id="phoneNumber call-btn">
+              <a id="phoneNumber" style="color: white"> Request for Call</a>
+            </button>
+          </div>
+          <p class="report">
+            <span>Found Something Wrong with this Listing? </span
+            ><a href="#" id="report-link">Report Here</a>.
+          </p>
+        </div>
+      </section>
+  
+  
+      <!-- main code end -->
+  
+      <div class="containera">
+        <!-- Key Highlights Section -->
+        <div class="highlights">
+          <h2>Key Highlights</h2>
+          <div class="highlight-tags" id="highlight-tags"></div>
+          <p id="property-description"></p>
+          <ul class="change" id="property-highlights"></ul>
+          <div class="show-more">Show More</div>
+  
+          <h3 style="margin-top: 2rem">Property Information</h3>
+  
+          <!-- grid start  -->
+          <div class="grid-container" id="property-info"></div>
+          <!-- grid end  -->
+        </div>
+  
+        <!-- Contact Section -->
+        <div class="contact-card">
+          <h2>Contact our Real Estate Experts</h2>
+          <div class="agent-info">
+            <div class="avatar">K</div>
+            <div class="details">
+              <strong id="agent-name">Amit Rai</strong>
+              <span class="rating" id="agent-rating">5 ★</span><br />
+              <span id="agent-phone">+91 9891019190</span>
+            </div>
+          </div>
+          <form id="contactForm">
+            <div class="one mt-3">
+              <h4 class="heeading">For More Details</h4>
+              <input
+                id="contactName"
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+  
+            <input
+              id="contactEmail"
+              type="email"
+              name="email"
+              placeholder="Your Email"
+            />
+            <input
+              id="contactPhone"
+              type="tel"
+              name="phone"
+              placeholder="Your Phone Number"
+            />
+            <textarea
+              id="contactMessage"
+              name="message"
+              rows="4"
+              placeholder="Your Message"
+              required
+            ></textarea>
+  
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+  
+      <!-- cards sections -->
+  
+      <!-- cards sections -->
+  
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-column">
+            <img src="assets/img/logo3.png" alt="logo" />
+            <p>
+              At LDD Real Estate, we specialize in finding the perfect home for
+              you and your family.
+            </p>
+            <div class="socia_media_links">
+              <a
+                href="https://www.facebook.com/people/LDD-Realty/61564032338625/"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                href=" https://www.instagram.com/lddrealty?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>PROPERTIES</h4>
+            <ul>
+              <li><a href="properties.html">Our Listings</a></li>
+              <li><a href="#">Residential Properties</a></li>
+              <li><a href="#">Retail Properties</a></li>
+              <li><a href="#">Commercial Properties</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>residential real estate</h4>
+            <ul>
+              <li><a href="#">Plots in Gurgaon</a></li>
+              <li><a href="#">Bungalows in Gurgaon</a></li>
+              <li><a href="#">Builder Floors in Gurgaon</a></li>
+              <li><a href="#">Apartments in Gurgaon</a></li>
+              <li><a href="#">All Residential Properties in Gurgaon</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Residential Localities</h4>
+            <ul>
+              <li><a href="#">DLF City Phase 1-5</a></li>
+              <li><a href="#">M.G.Road</a></li>
+              <li><a href="#">Golf Course Road</a></li>
+              <li><a href="#">Golf Course Extn Road</a></li>
+              <li><a href="#">Sohna Road</a></li>
+              <li><a href="#">Sushant Lok 1 & 2</a></li>
+              <li><a href="#">South City 1 & 2</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="footer-bottom">
+          <p>
+            &copy; All rights reserved by <strong>LDD</strong> Design and Develop
+            by Big Design Software Technology.
+          </p>
+        </div>
+      </footer>
+  </div>
+    <!-- Footer Section -->
+
+    <!-- JavaScript for Scroll to Top -->
+    <script src="script.js"></script>
+
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/service.js"></script>
+    <script type="module" src="api/blogApi.js"></script>
+    <script type="module" src="api/contactApi.js"></script>
+
+    <script type="module">
+      import { getListingById } from "./api/listingApi.js"; // Assuming you have this API function
+      import { getAllContacts } from "./api/contactApi.js";
+
+      const renderPropertyDetails = async () => {
+        const loader = document.getElementById("loader"); // Assuming there's a loader element
+        const propertyId = new URLSearchParams(window.location.search).get(
+          "id"
+        ); // Extract property ID from URL
+        const propertyContainer = document.getElementById("property-container");
+        const highlightTags = document.getElementById("highlight-tags");
+        const propertyDescription = document.getElementById(
+          "property-description"
+        );
+        const propertyHighlights = document.getElementById(
+          "property-highlights"
+        );
+        const propertyInfoContainer = document.getElementById("property-info");
+        const mapButton = document.getElementById("map-button");
+        loader.style.display = "block"; // Show loader
+
+        try {
+          const property = await getListingById(propertyId); // Fetch property details by ID
+
+          if (!property) {
+            propertyContainer.innerHTML = "<p>Property not found.</p>";
+            return;
+          }
+
+          // Render property details
+          document.getElementById("property-title").innerText = property.title;
+          document.getElementById(
+            "phoneNumber"
+          ).href = `tel:${property.contactOptions.whatsapp}`;
+          document.getElementById(
+            "whatsapp-link"
+          ).href = `https://wa.me/${property.contactOptions.phone}`;
+          document.getElementById(
+            "property-id"
+          ).innerText = `Listing ID #${property.listingId}`;
+          document.getElementById(
+            "property-price"
+          ).innerText = `₹ ${property.price}`;
+
+          // Slider initialization
+          const sliderImage = document.getElementById("slider-image");
+          const leftBtn = document.querySelector(".left");
+          const rightBtn = document.querySelector(".right");
+          let currentIndex = 0;
+
+          // Update the image source based on the current index
+          function updateImage(index) {
+            if (property.media.length > 0) {
+              sliderImage.src = property.media[index] || "";
+            }
+          }
+
+          // Initially set the first image
+          updateImage(currentIndex);
+
+          // Event listener for the left button (previous image)
+          leftBtn.addEventListener("click", () => {
+            currentIndex =
+              currentIndex === 0 ? property.media.length - 1 : currentIndex - 1;
+            updateImage(currentIndex);
+          });
+
+          // Event listener for the right button (next image)
+          rightBtn.addEventListener("click", () => {
+            currentIndex =
+              currentIndex === property.media.length - 1 ? 0 : currentIndex + 1;
+            updateImage(currentIndex);
+          });
+
+          // Check if property.map exists and display the map button if true
+          if (mapButton && !!property.map) {
+            mapButton.style.display = "block"; // Show the map button if map exists
+          } else {
+            mapButton.style.display = "none"; // Hide the map button if no map
+          }
+
+          // Populate property attributes list
+          const attributesList = document.getElementById("property-attributes");
+          attributesList.innerHTML = `
+              <li><i class="fa-solid fa-bed"></i> ${property.bedrooms} Bedrooms + ${property.additionalRooms}</li>
+              <li><i class="fa-solid fa-chair"></i> ${property.furnishingStatus}</li>
+              <li><i class="fa-solid fa-toilet"></i> ${property.bathrooms} Bathroom</li>
+              <li><i class="fa-solid fa-chart-area"></i> ${property.area}</li>
+              <li><i class="fa-solid fa-square-parking"></i> ${property.view}</li>
+              <li><i class="fa-solid fa-building"></i> ${property.floorNumber} Floor out of ${property.totalFloors} Floors</li>
+            `;
+          const photoCountButton = document.getElementById("photoCount");
+          photoCountButton.innerText = `${property.media.length} Photos`;
+
+          // Check if highlights is an array, otherwise handle it as an empty array
+          let highlights = property.highlights;
+
+          console.log(property.highlights);
+          // Populate key highlights
+          highlightTags.innerHTML = highlights.tags
+            .map(
+              (highlight) => `<span class="highlight-tag">${highlight}</span>`
+            )
+            .join(" ");
+
+          // Add property description
+          propertyDescription.innerText = property.highlights.description || "";
+
+          // Add highlights to property-highlights list
+          const limitHighlights = 3;
+          const propertyHighlights = document.querySelector(
+            "#property-highlights"
+          );
+          propertyHighlights.innerHTML = highlights.points
+            .slice(0, limitHighlights) // Initially show only the first 2 points
+            .map((highlight) => `<li>${highlight}</li>`)
+            .join("");
+
+          // Show more functionality
+          const showMoreButton = document.querySelector(".show-more");
+
+          if (highlights.points.length > limitHighlights) {
+            showMoreButton.style.display = "block"; // Show the button if there are more than 2 points
+            showMoreButton.addEventListener("click", () => {
+              if (
+                propertyHighlights.classList.contains("show-more-highlights")
+              ) {
+                // Show only the first 2 points when "Show Less" is clicked
+                propertyHighlights.classList.remove("show-more-highlights");
+                propertyHighlights.innerHTML = highlights.points
+                  .slice(0, limitHighlights) // Limit to first 2 points
+                  .map((highlight) => `<li>${highlight}</li>`)
+                  .join("");
+                showMoreButton.innerText = "Show More";
+              } else {
+                // Show all points when "Show More" is clicked
+                propertyHighlights.classList.add("show-more-highlights");
+                propertyHighlights.innerHTML = highlights.points
+                  .map((highlight) => `<li>${highlight}</li>`)
+                  .join(""); // Show all points
+                showMoreButton.innerText = "Show Less";
+              }
+            });
+          } else {
+            showMoreButton.style.display = "none"; // Hide the button if there are 2 or fewer points
+          }
+
+          // Populate Property Information Grid
+          const propertyInfo = [
+            {
+              label: "Listing Type",
+              value: property.propertyDetails.listingType,
+            }, // from propertyDetails
+            {
+              label: "Building Type",
+              value: property.propertyDetails.buildingType,
+            }, // from propertyDetails
+            {
+              label: "Property Type",
+              value: property.propertyDetails.propertyType,
+            }, // from propertyDetails
+            { label: "City", value: property.location.city }, // from location
+            { label: "Micro Market", value: property.location.microMarket }, // from location
+            { label: "Locality", value: property.location.locality }, // from location
+            { label: "Price", value: property.price }, // from root level
+            { label: "Area", value: property.area }, // from root level
+            { label: "Number of Rooms", value: property.bedrooms }, // from root level
+            { label: "Number of Bathroom", value: property.bathrooms }, // from root level
+            { label: "Facing", value: property.facing }, // from root level
+            { label: "Additional Rooms", value: property.additionalRooms }, // from root level
+            { label: "Balcony Connected", value: property.balcony }, // from root level
+            { label: "Power Back-up", value: property.powerBackup }, // from root level
+            // { label: "Parking", value: property.view }, // I assumed 'view' here; if it's incorrect, replace with parking-related field
+            { label: "Flooring", value: property.flooring }, // from root level
+            { label: "Floor Number", value: property.floorNumber }, // from root level
+            { label: "Total Floor Count", value: property.totalFloors }, // from root level
+            { label: "Unit Number", value: property.unitNumber }, // from root level
+          ];
+
+          propertyInfoContainer.innerHTML = propertyInfo
+            .map(
+              (info) =>
+                `<div class="grid-item"><h5>${info.label}</h5> <p>${info.value}</p></div>`
+            )
+            .join("");
+        } catch (error) {
+          console.error("Error fetching property details:", error);
+          propertyContainer.innerHTML =
+            "<p>Failed to load property details.</p>";
+        } finally {
+          loader.style.display = "none"; // Hide loader
+        }
+      };
+
+      renderPropertyDetails();
+    </script>
+  </body>
+</html>

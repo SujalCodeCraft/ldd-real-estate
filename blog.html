@@ -1,287 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Listing</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/blog.css" />
+    <link rel="stylesheet" href="assets/css/properties.css" />
+    <link rel="stylesheet" href="assets/css/servicesPage.css" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-xyz12345..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    /* Styling for the pagination */
+    .pagination-container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .pagination-button {
+      padding: 10px 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #9c9696;
+      transition: background-color 0.3s;
+    }
+    .pagination-button:hover {
+      background-color: #e0e0e0;
+    }
+    .pagination-button:disabled {
+      cursor: not-allowed;
+      background-color: #d0d0d0;
+    }
+  </style>
+  <body>
+    <div id="snackbar"></div>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog - Details</title>
-  <link rel="stylesheet" href="CSS/index.css" />
-  <link rel="stylesheet" href="CSS/blog.css" />
-  <link rel="stylesheet" href="CSS/properties.css" />
-  <link rel="stylesheet" href="CSS/servicesPage.css">
-  <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-xyz12345..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <nav style="position: sticky !important;" class="navbar service">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <img class="logo" src="assets/img/logo1.jpeg" alt="image_logo" />
+        </a>
+      </div>
+      <ul class="navbar-links">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >ABOUT US
+            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="aboutUs.html">LDD Real Estate</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >SERVICES<span class="arrow">
+              <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="servicesPage1.html"
+                >Real Estate Consultant In Haryana
+              </a>
+            </li>
+            <li>
+              <a href="commercial-real-estate.html"
+                >Commercial Real Estate Consultant</a
+              >
+            </li>
+            <li>
+              <a href="Retail-Real-Estate-Services.html">
+                Retail Real Estate Services</a
+              >
+            </li>
+            <li>
+              <a href="Real-Estate-Portfolio-Mangement.html">
+                Real Estate Portfolio Management</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >PROPERTIES
+            <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="ourlisting.html">Our Listings</a>
+            </li>
+            <li><a href="comercial-property.html">Commercial Properties</a></li>
+            <li><a href="Retail-property.html">Retail Properties</a></li>
+            <li><a href="All-property.html">All Properties</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >RESOURCES
+            <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">Blog</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="contactUs" href="contactUs.html">CONTACT US</a>
+        </li>
+      </ul>
+      <div class="navbar-right">
+        <a href="tel:9818737542">
+          <button class="call-now">Call Now</button>
+        </a>
+      </div>
+      <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-<body>
-  <nav class="navbar service">
-    <div class="navbar-logo">
-      <a href="index.html">
-        <img class="logo" src="img/logo1.jpeg" alt="image_logo" />
-      </a>
-    </div>
-    <ul class="navbar-links">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">ABOUT US
-          <span class="arrow"><i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="aboutUs.html">LDD Real Estate</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">SERVICES<span class="arrow">
-            <i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="servicesPage1.html">Real Estate Consultant In Haryana
-            </a>
-          </li>
-          <li>
-            <a href="servicesPage2.html">Commercial Real Estate Consultant</a>
-          </li>
-          <li>
-            <a href="servicesPage3.html"> Retail Real Estate Services</a>
-          </li>
-          <li>
-            <a href="servicesPage4.html"> Real Estate Portfolio Management</a>
-          </li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">PROPERTIES
-          <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="propertiesPage1.html">Our Listings</a>
-          </li>
-          <li><a href="propertiesPage2.html">Commercial Properties</a></li>
-          <li><a href="propertiesPage3.html">Retail Properties</a></li>
-          <li><a href="propertiesPage4.html">All Properties</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">RESOURCES
-          <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="#">Blog</a>
-          </li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a class="contactUs" href="contactUs.html">CONTACT US</a>
-      </li>
-    </ul>
-    <div class="navbar-right">
-      <button class="call-now">Call Now</button>
-    </div>
-    <div class="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+      <img class="fa-square-whatsapp" src="assets/img/whatsapp.png" alt="" />
+    </nav>
 
-    <img class="fa-square-whatsapp" src="img/download-removebg-preview.png" alt="" />
-  </nav>
-
-  <!-- Offcanvas Menu -->
-  <div class="offcanvas">
-    <i class="burger fa-solid fa-xmark"></i>
-    <ul>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">ABOUT US
-          <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="aboutUs.html">LDD Real Estate</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">SERVICES<span class="arrow">
-            <i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="servicesPage1.html">Real Estate Consultant In Haryana
-            </a>
-          </li>
-          <li>
-            <a href="servicesPage2.html">Commercial Real Estate Consultant</a>
-          </li>
-          <li>
-            <a href="servicesPage3.html"> Retail Real Estate Services</a>
-          </li>
-          <li>
-            <a href="servicesPage4.html"> Real Estate Portfolio Management</a>
-          </li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">PROPERTIES
-          <span class="arrow"><i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="propertiesPage1.html">Our Listings</a>
-          </li>
-          <li><a href="propertiesPage2.html">Commercial Properties</a></li>
-          <li><a href="propertiesPage3.html">Retail Properties</a></li>
-          <li><a href="propertiesPage4.html">All Properties</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle">RESOURCES
-          <span class="arrow"><i class="fa-solid fa-angle-down"></i></span></a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="#">Blog</a>
-          </li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="contactUs.html">CONTACT US</a>
-      </li>
-      <li><button class="call-now-drop">Call Now</button></li>
-    </ul>
-  </div>
-
-  <section class="banner">
-    <div class="banner-text">
-      <h1>BLOG</h1>
-    </div>
-  </section>
-
-  <!-- cards sections -->
-
-  <div class="blog-card">
-    <div class="meta">
-      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
-      <ul class="details">
-        <li class="author"><a href="#">John Doe</a></li>
-        <li class="date">Aug. 24, 2015</li>
-  
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas">
+      <i class="burger fa-solid fa-xmark"></i>
+      <ul>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >ABOUT US
+            <span class="arrow"> <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li><a href="aboutUs.html">LDD Real Estate</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >SERVICES<span class="arrow">
+              <i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="servicesPage1.html"
+                >Real Estate Consultant In Haryana
+              </a>
+            </li>
+            <li>
+              <a href="commercial-real-estate.html"
+                >Commercial Real Estate Consultant</a
+              >
+            </li>
+            <li>
+              <a href="Retail-Real-Estate-Services.html">
+                Retail Real Estate Services</a
+              >
+            </li>
+            <li>
+              <a href="Real-Estate-Portfolio-Mangement.html">
+                Real Estate Portfolio Management</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >PROPERTIES
+            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="ourlisting.html">Our Listings</a>
+            </li>
+            <li><a href="comercial-property.html">Commercial Properties</a></li>
+            <li><a href="Retail-property.html">Retail Properties</a></li>
+            <li><a href="All-property.html">All Properties</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"
+            >RESOURCES
+            <span class="arrow"><i class="fa-solid fa-angle-down"></i></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">Blog</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="contactUs.html">CONTACT US</a>
+        </li>
+        <li><button class="call-now-drop">Call Now</button></li>
       </ul>
     </div>
-    <div class="description">
-      <h1>The Thriving Real Estate Market in Gurgaon</h1>
-      <h2>A Smart Investment Choice</h2>
-      <p> Gurgaon, also known as Gurugram, has emerged as one of India’s most dynamic real estate markets. With its strategic location adjacent to Delhi and a booming job market, Gurgaon offers immense potential for homebuyers and investors alike.</p>
-      <p class="read-more">
-        <a href="blogdetail.html">Read More</a>
-       
-      </p>
-    </div>
-  </div>
-  <div class="blog-card alt">
-    <div class="meta">
-      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
-      <ul class="details">
-        <li class="author"><a href="#">Jane Doe</a></li>
-        <li class="date">July. 15, 2015</li>
-      </ul>
-    </div>
-    <div class="description">
-      <h1>Discover the Allure of Goa’s Real Estate Market</h1>
-      <h2>Introduction Goa</h2>
-      <p>renowned for its stunning beaches and vibrant culture, is not just a tourist destination; it’s also a flourishing real estate market. With an increasing number of people looking to invest in this paradise, Goa offers unique opportunities for both residential and vacation properties.</p>
-      <p class="read-more">
-        <a href="blogdetail.html">Read More</a>
-      </p>
-    </div>
-  </div>
-  
-  
-  
-  
-  
-  
-  <div class="blog-card">
-    <div class="meta">
-      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
-      <ul class="details">
-        <li class="author"><a href="#">John Doe</a></li>
-        <li class="date">Aug. 24, 2015</li>
-  
-      </ul>
-    </div>
-    <div class="description">
-      <h1>Dubai Real Estate: A Global Hub for Investors</h1>
-      <h2>Introduction Dubai’s real estate market is a beacon for international investors</h2>
-      <p> known for its luxurious properties and innovative developments. As one of the fastest-growing cities in the world, Dubai offers unique advantages that make it a prime location for real estate investment.</p>
-      <p class="read-more">
-        <a href="blogdetail.html">Read More</a>
-      </p>
-    </div>
-  </div>
-  
 
-  <!-- cards sections -->
-
-  <!-- Footer Section -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-column">
-        <img src="img/logo3.png" alt="logo" />
-        <p>
-          At LDD Real Estate, we specialize in finding the perfect home for
-          you and your family.
-        </p>
-        <div class="socia_media_links">
-
-          <a href="https://www.facebook.com/people/LDD-Realty/61564032338625/">
-
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <a href=" https://www.instagram.com/lddrealty?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
+  <div class="observation">
+      <section class="banner">
+        <div class="banner-text">
+          <h1>BLOG</h1>
         </div>
-      </div>
-      <div class="footer-column">
-        <h4>PROPERTIES</h4>
-        <ul>
-          <li><a href="properties.html">Our Listings</a></li>
-          <li><a href="#">Residential Properties</a></li>
-          <li><a href="#">Retail Properties</a></li>
-          <li><a href="#">Commercial Properties</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>residential real estate</h4>
-        <ul>
-          <li><a href="#">Plots in Gurgaon</a></li>
-          <li><a href="#">Bungalows in Gurgaon</a></li>
-          <li><a href="#">Builder Floors in Gurgaon</a></li>
-          <li><a href="#">Apartments in Gurgaon</a></li>
-          <li><a href="#">All Residential Properties in Gurgaon</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Residential Localities</h4>
-        <ul>
-          <li><a href="#">DLF City Phase 1-5</a></li>
-          <li><a href="#">M.G.Road</a></li>
-          <li><a href="#">Golf Course Road</a></li>
-          <li><a href="#">Golf Course Extn Road</a></li>
-          <li><a href="#">Sohna Road</a></li>
-          <li><a href="#">Sushant Lok 1 & 2</a></li>
-          <li><a href="#">South City 1 & 2</a></li>
-        </ul>
-      </div>
-    </div>
+      </section>
+  
+      <!-- cards sections -->
+      <span id="loader" class="loader" style="display: none"></span>
+      <div id="blogs-container" class="blogs-container"></div>
+      <div id="pagination-container" class="pagination-container"></div>
+      <!-- cards sections -->
+  
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-column">
+            <img src="assets/img/logo3.png" alt="logo" />
+            <p>
+              At LDD Real Estate, we specialize in finding the perfect home for
+              you and your family.
+            </p>
+            <div class="socia_media_links">
+              <a
+                href="https://www.facebook.com/people/LDD-Realty/61564032338625/"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                href=" https://www.instagram.com/lddrealty?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>PROPERTIES</h4>
+            <ul>
+              <li><a href="properties.html">Our Listings</a></li>
+              <li><a href="#">Residential Properties</a></li>
+              <li><a href="#">Retail Properties</a></li>
+              <li><a href="#">Commercial Properties</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>residential real estate</h4>
+            <ul>
+              <li><a href="#">Plots in Gurgaon</a></li>
+              <li><a href="#">Bungalows in Gurgaon</a></li>
+              <li><a href="#">Builder Floors in Gurgaon</a></li>
+              <li><a href="#">Apartments in Gurgaon</a></li>
+              <li><a href="#">All Residential Properties in Gurgaon</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Residential Localities</h4>
+            <ul>
+              <li><a href="#">DLF City Phase 1-5</a></li>
+              <li><a href="#">M.G.Road</a></li>
+              <li><a href="#">Golf Course Road</a></li>
+              <li><a href="#">Golf Course Extn Road</a></li>
+              <li><a href="#">Sohna Road</a></li>
+              <li><a href="#">Sushant Lok 1 & 2</a></li>
+              <li><a href="#">South City 1 & 2</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="footer-bottom">
+          <p>
+            &copy; All rights reserved by <strong>LDD</strong> Design and Develop
+            by Big Design Software Technology.
+          </p>
+        </div>
+      </footer>
+  </div>
+    <!-- Footer Section -->
 
-    <div class="footer-bottom">
-      <p>
-        &copy; All rights reserved by <strong>LDD</strong> Design and Develop
-        by Big Design Software Technology.
-      </p>
-    </div>
-  </footer>
-  <!-- Footer Section -->
+    <!-- JavaScript for Scroll to Top -->
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/service.js"></script>
+    <script type="module" src="api/blogApi.js"></script>
 
-  <!-- JavaScript for Scroll to Top -->
-  <!-- <script src="App/index.js"></script> -->
-  <script src="App/service.js"></script>
-</body>
+    <script type="module">
+      import { getAllBlogs } from "./api/blogApi.js"; // Assuming this API is available
 
+      // Global variables for pagination
+      let page = 1;
+      const limit = 8;
+
+      // Function to fetch blogs with pagination
+      const fetchBlogs = async (page = 1) => {
+        const loader = document.getElementById("loader");
+        const blogsContainer = document.getElementById("blogs-container");
+        const paginationContainer = document.getElementById(
+          "pagination-container"
+        );
+
+        // Show loader
+        loader.style.display = "block";
+
+        try {
+          const response = await getAllBlogs(page, limit); // Assuming the API accepts page and limit
+          blogsContainer.innerHTML = ""; // Clear previous content
+
+          if (response && response.data && response.data.length > 0) {
+            // Display each blog
+            response.data.forEach((blog) => {
+              const blogCard = document.createElement("div");
+              blogCard.classList.add("blog-card");
+
+              const firstParagraph =
+                blog.content?.[0]?.substring(0, 130) || "No content available.";
+
+              blogCard.innerHTML = `
+                <div class="meta">
+                  <div class="photo" style="background-image: url(${
+                    blog.media || "default-media.jpg"
+                  });"></div>
+                  <ul class="details">
+                    <li class="author"><a href="#">${
+                      blog.author || "Anonymous"
+                    }</a></li>
+                    <li class="date">${new Date(
+                      blog.createdAt
+                    ).toDateString()}</li>
+                  </ul>
+                </div>
+                <div class="description">
+                  <h1>${blog.title}</h1>
+                  <p>${firstParagraph}...</p>
+                  <p class="read-more">
+                    <a href="blogdetail.html?id=${blog._id}">Read More</a>
+                  </p>
+                </div>
+              `;
+
+              blogsContainer.appendChild(blogCard);
+            });
+
+            // Handle pagination buttons using totalPages
+            const totalPages = response.totalPages; // Use totalPages from API response
+            renderPaginationButtons(totalPages, page);
+          } else {
+            blogsContainer.innerHTML = "<p>No blogs available.</p>";
+          }
+        } catch (error) {
+          console.error("Error fetching blogs:", error);
+          blogsContainer.innerHTML = "<p>Failed to load blogs.</p>";
+        } finally {
+          // Hide loader
+          loader.style.display = "none";
+        }
+      };
+
+      // Function to render pagination buttons
+      const renderPaginationButtons = (totalPages, currentPage) => {
+        const paginationContainer = document.getElementById(
+          "pagination-container"
+        );
+        paginationContainer.innerHTML = ""; // Clear existing pagination buttons
+
+        for (let i = 1; i <= totalPages; i++) {
+          const button = document.createElement("button");
+          button.textContent = i;
+          button.classList.add("pagination-button");
+          button.disabled = i === currentPage; // Disable current page button
+
+          button.addEventListener("click", () => {
+            fetchBlogs(i); // Fetch blogs for the selected page
+          });
+
+          paginationContainer.appendChild(button);
+        }
+      };
+
+      // Initialize the first page load
+      fetchBlogs(page);
+    </script>
+  </body>
 </html>
