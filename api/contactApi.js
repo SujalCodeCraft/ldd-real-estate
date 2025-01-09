@@ -164,8 +164,8 @@ export const populateContactsTable = (container, contacts) => {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${contact.name}</td>
-      <td>${contact.email}</td>
       <td>${contact.phone}</td>
+      <td>${contact.email}</td>
       <td>${contact.message}</td>
     `;
     container.appendChild(row);
