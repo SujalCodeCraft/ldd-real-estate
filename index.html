@@ -205,26 +205,10 @@
     <!-- Slider main container -->
     <main>
       <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="slide-content">
-              <h2>CREATING RELATIONSHIP CAPITAL</h2>
-              <button>ONE STOP SOLUTION</button>
-              <img id="image1" src="" alt="home_img" />
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="slide-content">
-              <h2 style="color: #dbbc90">
-                CORPORATE <br />
-                & <br />
-                RETAIL SPACES
-              </h2>
-              <button>GET IN TOUCH</button>
-              <img id="image2" src="" alt="home_img" />
-            </div>
-          </div>
+        <div class="swiper-wrapper" id="swiperWrapper">
+          <!-- Slides will be dynamically injected here -->
         </div>
+        <!-- Pagination and Navigation -->
       </div>
     </main>
 
@@ -484,19 +468,19 @@
               const firstParagraph = property.title || "No title available"; // Default title if not available
 
               propertyCard.innerHTML = `
-              <div class="image-container" style="height:100%;">
-                <img src="${
-                  property.media[0] || "default-image.jpg"
-                }" alt="Listing_img" width="600" style="height:100%;"  />
-                <p class="centered-text">
-                  ${property.title || "Untitled Property"} <br>
-                  ${property.area || "Area not specified"}
-                  <a href="property-listing-detail.html?id=${property._id}">
-                    <span>Explore</span>
-                  </a>
-                </p>
-              </div>
-            `;
+                <div class="image-container" >
+                  <img src="${
+                    property.media[0] || "default-image.jpg"
+                  }" alt="Listing_img"  style="width=240px; object-fit: cover; height=auto;" />
+                  <p class="centered-text">
+                    ${property.title || "Untitled Property"} <br>
+                    ${property.area || "Area not specified"}
+                    <a href="property-listing-detail.html?id=${property._id}">
+                      <span>Explore</span>
+                    </a>
+                  </p>
+                </div>
+              `;
 
               listingsContainer.appendChild(propertyCard); // Append the property card
             });
@@ -515,39 +499,92 @@
       fetchListings(page); // Call the function to fetch listings on page load
     </script>
 
-    <script type="module">
-      import { getAllBanners } from "./api/bannerApi.js"; // Import banner API
+<script type="module">
+  import { getAllBanners } from "./api/bannerApi.js"; // Import banner API
 
-      // Function to fetch banners and dynamically update Swiper images
-      const fetchBanners = async () => {
-        try {
-          const response = await getAllBanners(); // Fetch banners
-          const banners = response.data[0]?.media || []; // Get media array or empty array
+  // Function to fetch banners and dynamically generate Swiper slides
+  const fetchBanners = async () => {
+    try {
+      const response = await getAllBanners(); // Fetch banners
+      const banners = response.data[0]?.media || []; // Get media array or empty array
 
-          // Check if banners are available
-          if (banners.length === 0) {
-            console.error("No banners available.");
-            return;
-          }
+      // Check if banners are available
+      if (banners.length === 0) {
+        console.error("No banners available.");
+        return;
+      }
 
-          // Select all Swiper images
-          const swiperSlides = document.querySelectorAll(".swiper-slide img");
+      // Get the Swiper wrapper
+      const swiperWrapper = document.getElementById("swiperWrapper");
 
-          // Assign each image's src to a corresponding banner URL
-          swiperSlides.forEach((image, index) => {
-            if (banners[index]) {
-              image.src = banners[index];
-            } else {
-              console.warn(`No banner available for image index ${index}`);
-            }
-          });
-        } catch (error) {
-          console.error("Error fetching banners:", error);
-        }
-      };
+      // Generate and append Swiper slides dynamically
+      banners.forEach((banner, index) => {
+        // Create Swiper slide element
+        const swiperSlide = document.createElement("div");
+        swiperSlide.classList.add("swiper-slide");
 
-      // Initialize banner fetching
-      fetchBanners();
-    </script>
+        // Create slide content wrapper
+        const slideContent = document.createElement("div");
+        slideContent.classList.add("slide-content");
+
+        // Create and append heading
+        const heading = document.createElement("h2");
+        heading.textContent = index === 0
+          ? "CREATING RELATIONSHIP CAPITAL"
+          : "CORPORATE & RETAIL SPACES";
+        heading.style.color = index === 1 ? "#dbbc90" : "";
+
+        // Create and append button
+        const button = document.createElement("button");
+        button.textContent = index === 0 ? "ONE STOP SOLUTION" : "GET IN TOUCH";
+
+        // Create and append image
+        const image = document.createElement("img");
+        image.src = banner; // Assign banner URL to the image src
+        image.alt = "home_img";
+
+        // Append elements to the slide content
+        slideContent.appendChild(heading);
+        slideContent.appendChild(button);
+        slideContent.appendChild(image);
+
+        // Append slide content to Swiper slide
+        swiperSlide.appendChild(slideContent);
+
+        // Append Swiper slide to the Swiper wrapper
+        swiperWrapper.appendChild(swiperSlide);
+      });
+
+      // Initialize Swiper with the provided configuration
+      if (document.querySelector(".mySwiper")) {
+        new Swiper(".mySwiper", {
+          crossFade: true,
+          effect: "fade",
+          spaceBetween: 30,
+          centeredSlides: true,
+          loop: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      }
+    } catch (error) {
+      console.error("Error fetching banners:", error);
+    }
+  };
+
+  // Initialize banner fetching
+  fetchBanners();
+</script>
+
   </body>
 </html>
