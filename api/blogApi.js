@@ -1,4 +1,4 @@
-import { BASE_URL,myFunction } from "./baseApi.js";
+import { BASE_URL, myFunction } from "./baseApi.js";
 
 const loader = document.getElementById("loader");
 const tabs = document.getElementById("myTabContent");
@@ -166,8 +166,27 @@ const deleteBlog = (blogId) => {
   getBlogById(blogId).then(async (blog) => {
     await deleteBlogById(blog._id);
     fetchData("blogs", "blogs-container");
+    editingBlogId = null;
     document.getElementById("imagePreview").style =
       "display: none; max-width: 100%; height: auto";
+
+      document.getElementById("blogTitle").value = "";
+      document.getElementById("blogAuthor").value = "";
+      document.querySelectorAll(".blogContent").forEach((el) => el.remove());
+      const contentContainer = document.getElementById("contentContainer");
+      contentContainer.innerHTML = `
+        <div class="content-item mb-2">
+          <textarea
+            class="form-control blogContent"
+            rows="3"
+            placeholder="Add a paragraph"
+          ></textarea>
+        </div>
+      `;
+      document.getElementById("blogImage").value = "";
+      document.getElementById("imagePreview").style =
+        "display: none; max-width: 100%; height: auto";
+  
   });
 };
 

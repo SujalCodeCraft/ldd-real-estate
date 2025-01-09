@@ -1,4 +1,4 @@
-import { BASE_URL,myFunction } from "./baseApi.js";
+import { BASE_URL, myFunction } from "./baseApi.js";
 
 const loader = document.getElementById("loader");
 const tabs = document.getElementById("myTabContent");
@@ -227,9 +227,11 @@ const deleteListing = (listingId) => {
 
   getListingById(listingId).then(async (listing) => {
     await deleteListingById(listing._id);
-    fetchData("listing", "listings-container",currentPage);
+    fetchData("listing", "listings-container", currentPage);
     const mediaPreview = document.getElementById("mediaPreview");
     mediaPreview.innerHTML = "";
+    editingListingId = null;
+    document.getElementById("listingForm").reset();
 
     newImages = [];
     imagesToRemove = [];
@@ -244,11 +246,7 @@ export const populateListingsTable = (container, listings) => {
   console.log(page, totalCount);
   currentPage = page;
   totalPages = totalCount;
-  updatePaginationControls(
-    "listing-pagination-container",
-    page,
-    totalCount
-  );
+  updatePaginationControls("listing-pagination-container", page, totalCount);
   listings.data.forEach((listing) => {
     const row = document.createElement("tr");
     row.innerHTML = `
@@ -553,7 +551,7 @@ export const handleListingFormSubmission = async (event, listingId) => {
     // Reload listings
     myFunction("Listing Submitted Successfully");
 
-    fetchData("listing", "listings-container",currentPage);
+    fetchData("listing", "listings-container", currentPage);
     const mediaPreview = document.getElementById("mediaPreview");
     mediaPreview.innerHTML = "";
 

@@ -163,11 +163,11 @@ export const populateContactsTable = (container, contacts) => {
   contacts.data.forEach((contact) => {
     const row = document.createElement("tr");
     row.innerHTML = `
-      <td>${contact.name}</td>
-      <td>${contact.phone}</td>
-      <td>${contact.email}</td>
-      <td>${contact.message}</td>
-    `;
+    <td style="width: 25%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${contact.name}</td>
+    <td style="width: 25%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${contact.phone}</td>
+    <td style="width: 25%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${contact.email}</td>
+    <td style="width: 25%;">${contact.message}</td>
+  `;
     container.appendChild(row);
   });
 };

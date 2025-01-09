@@ -598,8 +598,9 @@ Delhi real estate destination css  =============== */
 }
 
 .Our_Listings .listing-item img {
+
   width: 100%;
-  height: auto;
+  height: 200px;
   border-radius: 4px;
   object-fit: cover;
 }
@@ -617,6 +618,10 @@ Delhi real estate destination css  =============== */
   .Our_Listings {
     grid-template-columns: repeat(3, 1fr); /* 3 items per row on large screens */
   }
+.Our_Listings .listing-item img {
+  height: 300px;
+
+}
 }
 
 .Our_Listingss h3 {
