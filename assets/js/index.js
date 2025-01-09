@@ -46,27 +46,27 @@ document.addEventListener("DOMContentLoaded", function () {
 // ================= Images Swiping Animation =========================>
 
 // Check if the Swiper container exists
-if (document.querySelector(".mySwiper")) {
-  const swiper = new Swiper(".mySwiper", {
-    crossFade: true,
-    effect: "fade",
-    spaceBetween: 30,
-    centeredSlides: true,
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-}
+// if (document.querySelector(".mySwiper")) {
+//   const swiper = new Swiper(".mySwiper", {
+//     crossFade: true,
+//     effect: "fade",
+//     spaceBetween: 30,
+//     centeredSlides: true,
+//     loop: true,
+//     autoplay: {
+//       delay: 2500,
+//       disableOnInteraction: false,
+//     },
+//     pagination: {
+//       el: ".swiper-pagination",
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+//   });
+// }
 
 // ================= Number Running Animation =========================>
 

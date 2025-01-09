@@ -197,7 +197,7 @@
     </div>
     <!-- page main banner  -->
    <div class="observation">
-      <section class="banner">
+      <section style="height: 100% !important;" class="banner">
         <div class="banner-text">
           <h1>BLOG</h1>
         </div>
@@ -344,7 +344,7 @@
           // Render blog details
           blogDetailsContainer.innerHTML = `
   <div class="left">
-    <img src="${blog.media}" alt="Placeholder Image">
+    <img class="blog-detail-img" src="${blog.media}" style="  object-fit:cover;" alt="Placeholder Image">
     <h1 style="margin: 20px 0px">${blog.title}</h1>  
     <div class="post-content">
       <p>${blog.content[0]}</p>
