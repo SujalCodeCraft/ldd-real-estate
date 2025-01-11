@@ -54,7 +54,7 @@
   <body>
     <div id="snackbar"></div>
 
-    <nav style="position: sticky !important;" class="navbar service">
+    <nav style="position: sticky !important" class="navbar service">
       <div class="navbar-logo">
         <a href="index.html">
           <img class="logo" src="assets/img/logo1.jpeg" alt="image_logo" />
@@ -214,19 +214,19 @@
       </ul>
     </div>
 
-  <div class="observation">
+    <div class="observation">
       <section class="banner">
         <div class="banner-text">
           <h1>BLOG</h1>
         </div>
       </section>
-  
+
       <!-- cards sections -->
       <span id="loader" class="loader" style="display: none"></span>
       <div id="blogs-container" class="blogs-container"></div>
       <div id="pagination-container" class="pagination-container"></div>
       <!-- cards sections -->
-  
+
       <!-- Footer Section -->
       <footer class="footer">
         <div class="footer-container">
@@ -281,15 +281,15 @@
             </ul>
           </div>
         </div>
-  
+
         <div class="footer-bottom">
           <p>
-            &copy; All rights reserved by <strong>LDD</strong> Design and Develop
-            by Big Design Software Technology.
+            &copy; All rights reserved by <strong>LDD</strong> Design and
+            Develop by Big Design Software Technology.
           </p>
         </div>
       </footer>
-  </div>
+    </div>
     <!-- Footer Section -->
 
     <!-- JavaScript for Scroll to Top -->
@@ -302,7 +302,7 @@
 
       // Global variables for pagination
       let page = 1;
-      const limit = 8;
+      const limit = 5;
 
       // Function to fetch blogs with pagination
       const fetchBlogs = async (page = 1) => {
@@ -384,6 +384,7 @@
 
           button.addEventListener("click", () => {
             fetchBlogs(i); // Fetch blogs for the selected page
+            document.getElementById("blogs-container").innerHTML = "";
           });
 
           paginationContainer.appendChild(button);

@@ -307,11 +307,12 @@
     <script type="module">
       import { getAllListings } from "./api/listingApi.js"; // Assuming you have this API function
       let page = 1;
-      const limit = 9;
+      const limit = 6;
+
+      const listingsContainer = document.getElementById("listing-container");
 
       const fetchListings = async (page = 1) => {
         const loader = document.getElementById("loader");
-        const listingsContainer = document.getElementById("listing-container");
         const paginationContainer = document.getElementById(
           "pagination-container"
         );
@@ -375,7 +376,9 @@
           button.disabled = i === currentPage; // Disable current page button
 
           button.addEventListener("click", () => {
-            fetchBlogs(i); // Fetch blogs for the selected page
+            fetchListings(i); // Fetch blogs for the selected page
+          listingsContainer.innerHTML = "";
+
           });
 
           paginationContainer.appendChild(button);

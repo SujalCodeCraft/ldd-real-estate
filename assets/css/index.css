@@ -588,7 +588,7 @@ Delhi real estate destination css  =============== */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(305px, 1fr)); /* This allows flexibility */
   gap: 20px; /* Space between items */
-  margin: 0.5rem 0 7rem 0;
+  margin: 0.5rem 0 0rem 0;
 }
 
 .Our_Listings .listing-item {
